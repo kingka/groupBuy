@@ -28,6 +28,10 @@
 		F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6B1BA9594300ECF92C /* NSObject+MJKeyValue.m */; };
 		F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */; };
 		F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */; };
+		F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B871BA95AC500ECF92C /* KKDeal.m */; };
+		F9B11B8B1BA95AC500ECF92C /* KKDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B881BA95AC500ECF92C /* KKDealResult.m */; };
+		F9B11B8C1BA95AC500ECF92C /* KKDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B891BA95AC500ECF92C /* KKDealParam.m */; };
+		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,14 @@
 		F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		F9B11B6E1BA9594300ECF92C /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		F9B11B841BA95AC500ECF92C /* KKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDeal.h; sourceTree = "<group>"; };
+		F9B11B851BA95AC500ECF92C /* KKDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealParam.h; sourceTree = "<group>"; };
+		F9B11B861BA95AC500ECF92C /* KKDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealResult.h; sourceTree = "<group>"; };
+		F9B11B871BA95AC500ECF92C /* KKDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDeal.m; sourceTree = "<group>"; };
+		F9B11B881BA95AC500ECF92C /* KKDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealResult.m; sourceTree = "<group>"; };
+		F9B11B891BA95AC500ECF92C /* KKDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealParam.m; sourceTree = "<group>"; };
+		F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealTool.h; sourceTree = "<group>"; };
+		F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +238,8 @@
 			children = (
 				F9B11B531BA9185B00ECF92C /* KKAPITool.h */,
 				F9B11B541BA9185B00ECF92C /* KKAPITool.m */,
+				F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */,
+				F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -233,6 +247,12 @@
 		F9B11B571BA9482700ECF92C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9B11B841BA95AC500ECF92C /* KKDeal.h */,
+				F9B11B851BA95AC500ECF92C /* KKDealParam.h */,
+				F9B11B861BA95AC500ECF92C /* KKDealResult.h */,
+				F9B11B871BA95AC500ECF92C /* KKDeal.m */,
+				F9B11B881BA95AC500ECF92C /* KKDealResult.m */,
+				F9B11B891BA95AC500ECF92C /* KKDealParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,9 +387,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B11B8B1BA95AC500ECF92C /* KKDealResult.m in Sources */,
+				F9B11B8C1BA95AC500ECF92C /* KKDealParam.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
 				F9B11B711BA9594300ECF92C /* MJExtensionConst.m in Sources */,
 				F9B11B761BA9594300ECF92C /* NSObject+MJClass.m in Sources */,
+				F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */,
 				F9B11B741BA9594300ECF92C /* MJPropertyKey.m in Sources */,
 				F9B11B551BA9185B00ECF92C /* KKAPITool.m in Sources */,
 				F9B11B511BA90C1000ECF92C /* DPRequest.m in Sources */,
@@ -382,6 +405,7 @@
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
+				F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */,
 				F9B11ADF1BA909BB00ECF92C /* main.m in Sources */,
 				F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */,
 			);
