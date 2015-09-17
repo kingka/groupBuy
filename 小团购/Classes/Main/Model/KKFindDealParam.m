@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Imanol. All rights reserved.
 //
 
-#import "KKDealParam.h"
+#import "KKFindDealParam.h"
 
-@implementation KKDealParam
+@implementation KKFindDealParam
 
 @end

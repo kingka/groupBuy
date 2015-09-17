@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKDealResult : NSObject
-
+@interface KKFindDealResult : NSObject
+/** 所有页面团购总数 */
+@property (assign, nonatomic) int total_count;
 @end

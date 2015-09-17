@@ -70,7 +70,7 @@
     NSError *error;
     id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     
-	NSLog(@"return: \n%@", result);
+	//NSLog(@"return: \n%@", result);
     if (!result) {
         [self failedWithError:error];
 	} else {

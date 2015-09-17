@@ -12,10 +12,14 @@
 
 @implementation KKDealTool
 
-+(void)requst:(NSString *)url params:(KKDealParam *)params success:(void (^)(KKDealResult *))success failure:(void (^)(NSError *))failure{
++(void)findDeals:(KKFindDealParam *)params success:(void (^)(KKFindDealResult *))success failure:(void (^)(NSError *))failure{
     
     KKAPITool *tool = [KKAPITool shareKKAPITool];
-    [tool requset:url params:@"" success:^(id json) {
+    [tool requset:@"v1/deal/find_deals" params:params.keyValues success:^(id json) {
+        if(success){
+            KKFindDealResult *dealResult = [KKFindDealResult objectWithKeyValues:json];
+            success(dealResult);
+        }
         
     } failure:^(NSError *error) {
         

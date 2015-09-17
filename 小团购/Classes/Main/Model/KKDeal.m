@@ -7,7 +7,16 @@
 //
 
 #import "KKDeal.h"
+#import "KKBusiness.h"
+#import "MJExtension.h"
 
 @implementation KKDeal
 
++(NSDictionary *)objectClassInArray{
+    return @{@"businesses" : [KKBusiness class]};
+}
+
++(NSDictionary *)replacedKeyFromPropertyName{
+    return @{@"desc" : @"description"};
+}
 @end

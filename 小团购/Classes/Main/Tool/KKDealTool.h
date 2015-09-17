@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KKDealParam.h"
-#import "KKDealResult.h"
+#import "KKFindDealParam.h"
+#import "KKFindDealResult.h"
 
 @interface KKDealTool : NSObject
 
-+(void)requst:(NSString*)url params:(KKDealParam* )params success:(void(^)(KKDealResult *result))success failure:(void(^)(NSError *error))failure;
++(void)findDeals:(KKFindDealParam* )params success:(void(^)(KKFindDealResult *result))success failure:(void(^)(NSError *error))failure;
 @end
