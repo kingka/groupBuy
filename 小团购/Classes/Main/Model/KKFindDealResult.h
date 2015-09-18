@@ -7,8 +7,8 @@
 //  团购查询结果
 
 #import <Foundation/Foundation.h>
-
-@interface KKFindDealResult : NSObject
+#import "KKGetSingleDealResult.h"
+@interface KKFindDealResult : KKGetSingleDealResult
 /** 所有页面团购总数 */
 @property (assign, nonatomic) int total_count;
 @end

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "KKDealTool.h"
 #import "KKFindDealParam.h"
+//#import "KKGetSingleDealResult.h"
+#import "KKGetSingleDealParam.h"
 
 @interface ViewController ()
 
@@ -34,11 +36,19 @@
     param.city = @"北京";
     param.limit = @5;
     [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
-        NSLog(@"result:--%@",result);
+       
     } failure:^(NSError *error) {
         
     }];
     
+    
+    KKGetSingleDealParam *param2 = [[KKGetSingleDealParam alloc]init];
+    param2.deal_id = @"2-6390700";
+    [KKDealTool getSingleDeals:param2 success:^(KKGetSingleDealResult *result) {
+         NSLog(@"result:--%@",result.deals);
+    } failure:^(NSError *error) {
+        
+    }];
    
 }
 

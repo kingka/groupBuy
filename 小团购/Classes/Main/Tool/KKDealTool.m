@@ -25,4 +25,18 @@
         
     }];
 }
+
++(void)getSingleDeals:(KKGetSingleDealParam* )params success:(void(^)(KKGetSingleDealResult *result))success failure:(void(^)(NSError *error))failure;{
+    KKAPITool *tool = [KKAPITool shareKKAPITool];
+    [tool requset:@"v1/deal/get_single_deal" params:params.keyValues success:^(id json) {
+        if(success){
+            KKGetSingleDealResult *dealResult = [KKGetSingleDealResult objectWithKeyValues:json];
+            success(dealResult);
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+
+}
 @end
