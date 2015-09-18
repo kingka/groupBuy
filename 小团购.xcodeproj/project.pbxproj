@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
+		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
+		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
+		F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */; };
 		F98FBAD81BAA8F6A001D501B /* KKGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */; };
 		F98FBADB1BAA8F77001D501B /* KKGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */; };
 		F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE41BABA590001D501B /* KKDealsViewController.m */; };
@@ -49,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		F95EDFFB1BABB0FE00A2BF5B /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		F98FBAD61BAA8F6A001D501B /* KKGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealResult.h; sourceTree = "<group>"; };
 		F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealResult.m; sourceTree = "<group>"; };
 		F98FBAD91BAA8F77001D501B /* KKGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealParam.h; sourceTree = "<group>"; };
@@ -129,6 +141,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F95EDFF41BABADDF00A2BF5B /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */,
+				F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */,
+				F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */,
+				F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
 		F98FBAE11BABA590001D501B /* Deals */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +269,10 @@
 		F9B11B481BA90C1000ECF92C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F95EDFFB1BABB0FE00A2BF5B /* UIView+AutoLayout.h */,
+				F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */,
+				F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */,
+				F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -253,6 +280,7 @@
 		F9B11B491BA90C1000ECF92C /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F95EDFF41BABADDF00A2BF5B /* AwesomeMenu */,
 				F9B11B581BA9594300ECF92C /* MJExtension */,
 				F9B11B4A1BA90C1000ECF92C /* dianpingapi */,
 			);
@@ -433,11 +461,14 @@
 			files = (
 				F9B11B8B1BA95AC500ECF92C /* KKFindDealResult.m in Sources */,
 				F9B11B8C1BA95AC500ECF92C /* KKFindDealParam.m in Sources */,
+				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
 				F9B11B711BA9594300ECF92C /* MJExtensionConst.m in Sources */,
+				F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */,
 				F9B11B761BA9594300ECF92C /* NSObject+MJClass.m in Sources */,
 				F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */,
 				F9B11B741BA9594300ECF92C /* MJPropertyKey.m in Sources */,
+				F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */,
 				F9B11B921BAA675000ECF92C /* KKBusiness.m in Sources */,
 				F9B11B551BA9185B00ECF92C /* KKAPITool.m in Sources */,
 				F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */,
@@ -452,6 +483,7 @@
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
 				F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */,
+				F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */,
 				F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */,
 				F9B11ADF1BA909BB00ECF92C /* main.m in Sources */,
 				F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */,

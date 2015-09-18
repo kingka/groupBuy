@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AwesomeMenu.h"
+#import "AwesomeMenuItem.h"
+#import "UIView+AutoLayout.h"
+#import "UIView+Extension.h"
 
-@interface KKDealsViewController : UICollectionViewController
+@interface KKDealsViewController : UICollectionViewController<AwesomeMenuDelegate>
 
 @end

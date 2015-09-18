@@ -10,4 +10,14 @@
 
 @implementation KKNavigationController
 
++(void)initialize{
+    
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    [navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
+}
+
+-(void)viewDidLoad{
+    
+    [super viewDidLoad];
+}
 @end
