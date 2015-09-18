@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		F98FBAD81BAA8F6A001D501B /* KKGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */; };
 		F98FBADB1BAA8F77001D501B /* KKGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */; };
+		F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE41BABA590001D501B /* KKDealsViewController.m */; };
+		F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE81BABA5ED001D501B /* KKNavigationController.m */; };
 		F9B11ADF1BA909BB00ECF92C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11ADE1BA909BB00ECF92C /* main.m */; };
 		F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11AE11BA909BB00ECF92C /* AppDelegate.m */; };
-		F9B11AE51BA909BB00ECF92C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11AE41BA909BB00ECF92C /* ViewController.m */; };
 		F9B11AE81BA909BB00ECF92C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B11AE61BA909BB00ECF92C /* Main.storyboard */; };
 		F9B11AEA1BA909BB00ECF92C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B11AE91BA909BB00ECF92C /* Images.xcassets */; };
 		F9B11AED1BA909BB00ECF92C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B11AEB1BA909BB00ECF92C /* LaunchScreen.xib */; };
@@ -52,13 +53,15 @@
 		F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealResult.m; sourceTree = "<group>"; };
 		F98FBAD91BAA8F77001D501B /* KKGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealParam.h; sourceTree = "<group>"; };
 		F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealParam.m; sourceTree = "<group>"; };
+		F98FBAE31BABA590001D501B /* KKDealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealsViewController.h; sourceTree = "<group>"; };
+		F98FBAE41BABA590001D501B /* KKDealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealsViewController.m; sourceTree = "<group>"; };
+		F98FBAE71BABA5ED001D501B /* KKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigationController.h; sourceTree = "<group>"; };
+		F98FBAE81BABA5ED001D501B /* KKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNavigationController.m; sourceTree = "<group>"; };
 		F9B11AD91BA909BB00ECF92C /* 小团购.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "小团购.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B11ADD1BA909BB00ECF92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B11ADE1BA909BB00ECF92C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9B11AE01BA909BB00ECF92C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		F9B11AE11BA909BB00ECF92C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
-		F9B11AE31BA909BB00ECF92C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
-		F9B11AE41BA909BB00ECF92C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
 		F9B11AE71BA909BB00ECF92C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9B11AE91BA909BB00ECF92C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F9B11AEC1BA909BB00ECF92C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -126,6 +129,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F98FBAE11BABA590001D501B /* Deals */ = {
+			isa = PBXGroup;
+			children = (
+				F98FBAE21BABA590001D501B /* Controller */,
+			);
+			path = Deals;
+			sourceTree = "<group>";
+		};
+		F98FBAE21BABA590001D501B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F98FBAE31BABA590001D501B /* KKDealsViewController.h */,
+				F98FBAE41BABA590001D501B /* KKDealsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F98FBAE61BABA5A0001D501B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F98FBAE71BABA5ED001D501B /* KKNavigationController.h */,
+				F98FBAE81BABA5ED001D501B /* KKNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F9B11AD01BA909BB00ECF92C = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +214,7 @@
 		F9B11B451BA90C1000ECF92C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F98FBAE11BABA590001D501B /* Deals */,
 				F9B11B461BA90C1000ECF92C /* Main */,
 				F9B11B471BA90C1000ECF92C /* Other */,
 			);
@@ -194,6 +224,7 @@
 		F9B11B461BA90C1000ECF92C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F98FBAE61BABA5A0001D501B /* Controller */,
 				F9B11B571BA9482700ECF92C /* Model */,
 				F9B11B521BA9184100ECF92C /* Tool */,
 			);
@@ -205,8 +236,6 @@
 			children = (
 				F9B11AE01BA909BB00ECF92C /* AppDelegate.h */,
 				F9B11AE11BA909BB00ECF92C /* AppDelegate.m */,
-				F9B11AE31BA909BB00ECF92C /* ViewController.h */,
-				F9B11AE41BA909BB00ECF92C /* ViewController.m */,
 				F9B11B481BA90C1000ECF92C /* Category */,
 				F9B11B491BA90C1000ECF92C /* Lib */,
 				F9B11B561BA941E100ECF92C /* KKSingleton.h */,
@@ -411,17 +440,18 @@
 				F9B11B741BA9594300ECF92C /* MJPropertyKey.m in Sources */,
 				F9B11B921BAA675000ECF92C /* KKBusiness.m in Sources */,
 				F9B11B551BA9185B00ECF92C /* KKAPITool.m in Sources */,
+				F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */,
 				F9B11B511BA90C1000ECF92C /* DPRequest.m in Sources */,
 				F9B11B731BA9594300ECF92C /* MJProperty.m in Sources */,
 				F9B11B721BA9594300ECF92C /* MJFoundation.m in Sources */,
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
-				F9B11AE51BA909BB00ECF92C /* ViewController.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
 				F98FBADB1BAA8F77001D501B /* KKGetSingleDealParam.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
+				F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */,
 				F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */,
 				F9B11ADF1BA909BB00ECF92C /* main.m in Sources */,
 				F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */,
