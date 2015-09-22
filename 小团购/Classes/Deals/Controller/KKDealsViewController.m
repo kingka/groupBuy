@@ -52,7 +52,7 @@
 
     //menu constrains
     [menu autoSetDimensionsToSize:CGSizeMake(200, menuH)];
-    menu.startPoint = CGPointMake(50, 100);
+    menu.startPoint = CGPointMake(menuBG.image.size.width * 0.5, menuH - menuBG.image.size.height * 0.5);
     menu.rotateAngle = 0.0;
     menu.menuWholeAngle = M_PI_2 ;
     menu.rotateAddButton = NO;
@@ -78,6 +78,15 @@
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
     menu.highlightedContentImage = [UIImage imageNamed:@"icon_pathMenu_cross_highlighted"];
     NSLog(@"open.");
+    
+    /*
+    [UIView transitionWithView:menu duration:1.0 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+    } completion:^(BOOL finished) {
+       
+        
+    }];*/
+
 }
 
 

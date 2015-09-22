@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE90B1BB1336C00F28E60 /* KKBusiness.m */; };
+		F92FE91A1BB1336C00F28E60 /* KKDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE90D1BB1336C00F28E60 /* KKDeal.m */; };
+		F92FE91B1BB1336C00F28E60 /* KKFindDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9101BB1336C00F28E60 /* KKFindDealParam.m */; };
+		F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9121BB1336C00F28E60 /* KKFindDealResult.m */; };
+		F92FE9231BB133B800F28E60 /* KKGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE91F1BB133B800F28E60 /* KKGetSingleDealResult.m */; };
+		F92FE9241BB133B800F28E60 /* KKGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9221BB133B800F28E60 /* KKGetSingleDealParam.m */; };
+		F92FE9271BB133EB00F28E60 /* KKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9261BB133EB00F28E60 /* KKCategory.m */; };
+		F92FE92A1BB133F600F28E60 /* KKSort.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9291BB133F600F28E60 /* KKSort.m */; };
+		F92FE92D1BB1340100F28E60 /* KKCity.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE92C1BB1340100F28E60 /* KKCity.m */; };
+		F92FE9301BB1340E00F28E60 /* KKRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE92F1BB1340E00F28E60 /* KKRegion.m */; };
+		F92FE9331BB1341E00F28E60 /* KKCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9321BB1341E00F28E60 /* KKCityGroup.m */; };
+		F92FE9391BB1343500F28E60 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9351BB1343500F28E60 /* categories.plist */; };
+		F92FE93A1BB1343500F28E60 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9361BB1343500F28E60 /* cities.plist */; };
+		F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9371BB1343500F28E60 /* cityGroups.plist */; };
+		F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9381BB1343500F28E60 /* sorts.plist */; };
 		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
 		F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */; };
-		F98FBAD81BAA8F6A001D501B /* KKGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */; };
-		F98FBADB1BAA8F77001D501B /* KKGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */; };
 		F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE41BABA590001D501B /* KKDealsViewController.m */; };
 		F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE81BABA5ED001D501B /* KKNavigationController.m */; };
 		F9B11ADF1BA909BB00ECF92C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11ADE1BA909BB00ECF92C /* main.m */; };
@@ -35,11 +48,7 @@
 		F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6B1BA9594300ECF92C /* NSObject+MJKeyValue.m */; };
 		F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */; };
 		F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */; };
-		F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B871BA95AC500ECF92C /* KKDeal.m */; };
-		F9B11B8B1BA95AC500ECF92C /* KKFindDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B881BA95AC500ECF92C /* KKFindDealResult.m */; };
-		F9B11B8C1BA95AC500ECF92C /* KKFindDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B891BA95AC500ECF92C /* KKFindDealParam.m */; };
 		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
-		F9B11B921BAA675000ECF92C /* KKBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B911BAA675000ECF92C /* KKBusiness.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F92FE90A1BB1336C00F28E60 /* KKBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKBusiness.h; sourceTree = "<group>"; };
+		F92FE90B1BB1336C00F28E60 /* KKBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKBusiness.m; sourceTree = "<group>"; };
+		F92FE90C1BB1336C00F28E60 /* KKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDeal.h; sourceTree = "<group>"; };
+		F92FE90D1BB1336C00F28E60 /* KKDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDeal.m; sourceTree = "<group>"; };
+		F92FE90F1BB1336C00F28E60 /* KKFindDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFindDealParam.h; sourceTree = "<group>"; };
+		F92FE9101BB1336C00F28E60 /* KKFindDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFindDealParam.m; sourceTree = "<group>"; };
+		F92FE9111BB1336C00F28E60 /* KKFindDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFindDealResult.h; sourceTree = "<group>"; };
+		F92FE9121BB1336C00F28E60 /* KKFindDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFindDealResult.m; sourceTree = "<group>"; };
+		F92FE91F1BB133B800F28E60 /* KKGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealResult.m; sourceTree = "<group>"; };
+		F92FE9201BB133B800F28E60 /* KKGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealParam.h; sourceTree = "<group>"; };
+		F92FE9211BB133B800F28E60 /* KKGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealResult.h; sourceTree = "<group>"; };
+		F92FE9221BB133B800F28E60 /* KKGetSingleDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealParam.m; sourceTree = "<group>"; };
+		F92FE9251BB133EB00F28E60 /* KKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCategory.h; sourceTree = "<group>"; };
+		F92FE9261BB133EB00F28E60 /* KKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCategory.m; sourceTree = "<group>"; };
+		F92FE9281BB133F600F28E60 /* KKSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSort.h; sourceTree = "<group>"; };
+		F92FE9291BB133F600F28E60 /* KKSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSort.m; sourceTree = "<group>"; };
+		F92FE92B1BB1340100F28E60 /* KKCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCity.h; sourceTree = "<group>"; };
+		F92FE92C1BB1340100F28E60 /* KKCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCity.m; sourceTree = "<group>"; };
+		F92FE92E1BB1340E00F28E60 /* KKRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegion.h; sourceTree = "<group>"; };
+		F92FE92F1BB1340E00F28E60 /* KKRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRegion.m; sourceTree = "<group>"; };
+		F92FE9311BB1341E00F28E60 /* KKCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCityGroup.h; sourceTree = "<group>"; };
+		F92FE9321BB1341E00F28E60 /* KKCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCityGroup.m; sourceTree = "<group>"; };
+		F92FE9351BB1343500F28E60 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		F92FE9361BB1343500F28E60 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		F92FE9371BB1343500F28E60 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
+		F92FE9381BB1343500F28E60 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -61,10 +96,6 @@
 		F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		F98FBAD61BAA8F6A001D501B /* KKGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealResult.h; sourceTree = "<group>"; };
-		F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealResult.m; sourceTree = "<group>"; };
-		F98FBAD91BAA8F77001D501B /* KKGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGetSingleDealParam.h; sourceTree = "<group>"; };
-		F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGetSingleDealParam.m; sourceTree = "<group>"; };
 		F98FBAE31BABA590001D501B /* KKDealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealsViewController.h; sourceTree = "<group>"; };
 		F98FBAE41BABA590001D501B /* KKDealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealsViewController.m; sourceTree = "<group>"; };
 		F98FBAE71BABA5ED001D501B /* KKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigationController.h; sourceTree = "<group>"; };
@@ -111,16 +142,8 @@
 		F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		F9B11B6E1BA9594300ECF92C /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
-		F9B11B841BA95AC500ECF92C /* KKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDeal.h; sourceTree = "<group>"; };
-		F9B11B851BA95AC500ECF92C /* KKFindDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFindDealParam.h; sourceTree = "<group>"; };
-		F9B11B861BA95AC500ECF92C /* KKFindDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFindDealResult.h; sourceTree = "<group>"; };
-		F9B11B871BA95AC500ECF92C /* KKDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDeal.m; sourceTree = "<group>"; };
-		F9B11B881BA95AC500ECF92C /* KKFindDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFindDealResult.m; sourceTree = "<group>"; };
-		F9B11B891BA95AC500ECF92C /* KKFindDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFindDealParam.m; sourceTree = "<group>"; };
 		F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealTool.h; sourceTree = "<group>"; };
 		F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealTool.m; sourceTree = "<group>"; };
-		F9B11B901BAA675000ECF92C /* KKBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKBusiness.h; sourceTree = "<group>"; };
-		F9B11B911BAA675000ECF92C /* KKBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKBusiness.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +164,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F92FE9091BB1336C00F28E60 /* Deal */ = {
+			isa = PBXGroup;
+			children = (
+				F92FE90A1BB1336C00F28E60 /* KKBusiness.h */,
+				F92FE90B1BB1336C00F28E60 /* KKBusiness.m */,
+				F92FE90C1BB1336C00F28E60 /* KKDeal.h */,
+				F92FE90D1BB1336C00F28E60 /* KKDeal.m */,
+			);
+			path = Deal;
+			sourceTree = "<group>";
+		};
+		F92FE90E1BB1336C00F28E60 /* FindDeal */ = {
+			isa = PBXGroup;
+			children = (
+				F92FE90F1BB1336C00F28E60 /* KKFindDealParam.h */,
+				F92FE9101BB1336C00F28E60 /* KKFindDealParam.m */,
+				F92FE9111BB1336C00F28E60 /* KKFindDealResult.h */,
+				F92FE9121BB1336C00F28E60 /* KKFindDealResult.m */,
+			);
+			path = FindDeal;
+			sourceTree = "<group>";
+		};
+		F92FE9171BB1336C00F28E60 /* GetSingleDeal */ = {
+			isa = PBXGroup;
+			children = (
+				F92FE91F1BB133B800F28E60 /* KKGetSingleDealResult.m */,
+				F92FE9201BB133B800F28E60 /* KKGetSingleDealParam.h */,
+				F92FE9211BB133B800F28E60 /* KKGetSingleDealResult.h */,
+				F92FE9221BB133B800F28E60 /* KKGetSingleDealParam.m */,
+			);
+			path = GetSingleDeal;
+			sourceTree = "<group>";
+		};
+		F92FE9181BB1336C00F28E60 /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+				F92FE9251BB133EB00F28E60 /* KKCategory.h */,
+				F92FE9261BB133EB00F28E60 /* KKCategory.m */,
+				F92FE9281BB133F600F28E60 /* KKSort.h */,
+				F92FE9291BB133F600F28E60 /* KKSort.m */,
+				F92FE92B1BB1340100F28E60 /* KKCity.h */,
+				F92FE92C1BB1340100F28E60 /* KKCity.m */,
+				F92FE92E1BB1340E00F28E60 /* KKRegion.h */,
+				F92FE92F1BB1340E00F28E60 /* KKRegion.m */,
+				F92FE9311BB1341E00F28E60 /* KKCityGroup.h */,
+				F92FE9321BB1341E00F28E60 /* KKCityGroup.m */,
+			);
+			path = MetaData;
+			sourceTree = "<group>";
+		};
+		F92FE9341BB1343500F28E60 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F92FE9351BB1343500F28E60 /* categories.plist */,
+				F92FE9361BB1343500F28E60 /* cities.plist */,
+				F92FE9371BB1343500F28E60 /* cityGroups.plist */,
+				F92FE9381BB1343500F28E60 /* sorts.plist */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		F95EDFF41BABADDF00A2BF5B /* AwesomeMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +295,7 @@
 		F9B11ADC1BA909BB00ECF92C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F92FE9341BB1343500F28E60 /* JSON */,
 				F9B11ADD1BA909BB00ECF92C /* Info.plist */,
 				F9B11ADE1BA909BB00ECF92C /* main.m */,
 			);
@@ -313,18 +398,10 @@
 		F9B11B571BA9482700ECF92C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9B11B841BA95AC500ECF92C /* KKDeal.h */,
-				F9B11B871BA95AC500ECF92C /* KKDeal.m */,
-				F9B11B851BA95AC500ECF92C /* KKFindDealParam.h */,
-				F9B11B891BA95AC500ECF92C /* KKFindDealParam.m */,
-				F9B11B861BA95AC500ECF92C /* KKFindDealResult.h */,
-				F9B11B881BA95AC500ECF92C /* KKFindDealResult.m */,
-				F9B11B901BAA675000ECF92C /* KKBusiness.h */,
-				F9B11B911BAA675000ECF92C /* KKBusiness.m */,
-				F98FBAD61BAA8F6A001D501B /* KKGetSingleDealResult.h */,
-				F98FBAD71BAA8F6A001D501B /* KKGetSingleDealResult.m */,
-				F98FBAD91BAA8F77001D501B /* KKGetSingleDealParam.h */,
-				F98FBADA1BAA8F77001D501B /* KKGetSingleDealParam.m */,
+				F92FE9091BB1336C00F28E60 /* Deal */,
+				F92FE90E1BB1336C00F28E60 /* FindDeal */,
+				F92FE9171BB1336C00F28E60 /* GetSingleDeal */,
+				F92FE9181BB1336C00F28E60 /* MetaData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,9 +516,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92FE9391BB1343500F28E60 /* categories.plist in Resources */,
 				F9B11AE81BA909BB00ECF92C /* Main.storyboard in Resources */,
+				F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */,
 				F9B11AED1BA909BB00ECF92C /* LaunchScreen.xib in Resources */,
+				F92FE93A1BB1343500F28E60 /* cities.plist in Resources */,
 				F9B11AEA1BA909BB00ECF92C /* Images.xcassets in Resources */,
+				F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,35 +540,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B11B8B1BA95AC500ECF92C /* KKFindDealResult.m in Sources */,
-				F9B11B8C1BA95AC500ECF92C /* KKFindDealParam.m in Sources */,
+				F92FE9331BB1341E00F28E60 /* KKCityGroup.m in Sources */,
+				F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */,
 				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,
+				F92FE9241BB133B800F28E60 /* KKGetSingleDealParam.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
 				F9B11B711BA9594300ECF92C /* MJExtensionConst.m in Sources */,
 				F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */,
 				F9B11B761BA9594300ECF92C /* NSObject+MJClass.m in Sources */,
 				F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */,
 				F9B11B741BA9594300ECF92C /* MJPropertyKey.m in Sources */,
+				F92FE91B1BB1336C00F28E60 /* KKFindDealParam.m in Sources */,
 				F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */,
-				F9B11B921BAA675000ECF92C /* KKBusiness.m in Sources */,
+				F92FE9301BB1340E00F28E60 /* KKRegion.m in Sources */,
 				F9B11B551BA9185B00ECF92C /* KKAPITool.m in Sources */,
+				F92FE9231BB133B800F28E60 /* KKGetSingleDealResult.m in Sources */,
+				F92FE92A1BB133F600F28E60 /* KKSort.m in Sources */,
 				F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */,
 				F9B11B511BA90C1000ECF92C /* DPRequest.m in Sources */,
 				F9B11B731BA9594300ECF92C /* MJProperty.m in Sources */,
 				F9B11B721BA9594300ECF92C /* MJFoundation.m in Sources */,
+				F92FE92D1BB1340100F28E60 /* KKCity.m in Sources */,
+				F92FE9271BB133EB00F28E60 /* KKCategory.m in Sources */,
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
+				F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
-				F98FBADB1BAA8F77001D501B /* KKGetSingleDealParam.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
+				F92FE91A1BB1336C00F28E60 /* KKDeal.m in Sources */,
 				F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */,
 				F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */,
-				F9B11B8A1BA95AC500ECF92C /* KKDeal.m in Sources */,
 				F9B11ADF1BA909BB00ECF92C /* main.m in Sources */,
 				F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */,
-				F98FBAD81BAA8F6A001D501B /* KKGetSingleDealResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "小团购/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -626,6 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "小团购/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
