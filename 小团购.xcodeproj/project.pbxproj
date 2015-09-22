@@ -22,6 +22,7 @@
 		F92FE93A1BB1343500F28E60 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9361BB1343500F28E60 /* cities.plist */; };
 		F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9371BB1343500F28E60 /* cityGroups.plist */; };
 		F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9381BB1343500F28E60 /* sorts.plist */; };
+		F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */; };
 		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
@@ -88,6 +89,8 @@
 		F92FE9361BB1343500F28E60 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		F92FE9371BB1343500F28E60 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		F92FE9381BB1343500F28E60 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		F92FE93D1BB14EA700F28E60 /* KKMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMetaDataTool.h; sourceTree = "<group>"; };
+		F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTool.m; sourceTree = "<group>"; };
 		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -391,6 +394,8 @@
 				F9B11B541BA9185B00ECF92C /* KKAPITool.m */,
 				F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */,
 				F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */,
+				F92FE93D1BB14EA700F28E60 /* KKMetaDataTool.h */,
+				F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				F92FE9231BB133B800F28E60 /* KKGetSingleDealResult.m in Sources */,
 				F92FE92A1BB133F600F28E60 /* KKSort.m in Sources */,
 				F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */,
+				F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */,
 				F9B11B511BA90C1000ECF92C /* DPRequest.m in Sources */,
 				F9B11B731BA9594300ECF92C /* MJProperty.m in Sources */,
 				F9B11B721BA9594300ECF92C /* MJFoundation.m in Sources */,

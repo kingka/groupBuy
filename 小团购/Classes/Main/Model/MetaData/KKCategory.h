@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MJExtension.h"
 
 @interface KKCategory : NSObject
 /** 类别名称 */
