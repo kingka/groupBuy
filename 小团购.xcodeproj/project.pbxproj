@@ -23,6 +23,7 @@
 		F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9371BB1343500F28E60 /* cityGroups.plist */; };
 		F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9381BB1343500F28E60 /* sorts.plist */; };
 		F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */; };
+		F92FE9411BB154BD00F28E60 /* KKMetaDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */; };
 		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
@@ -91,6 +92,7 @@
 		F92FE9381BB1343500F28E60 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		F92FE93D1BB14EA700F28E60 /* KKMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMetaDataTool.h; sourceTree = "<group>"; };
 		F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTool.m; sourceTree = "<group>"; };
+		F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTest.m; sourceTree = "<group>"; };
 		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				F9B11AF81BA909BB00ECF92C /* ___Tests.m */,
 				F9B11AF61BA909BB00ECF92C /* Supporting Files */,
+				F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */,
 			);
 			path = "小团购Tests";
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92FE9411BB154BD00F28E60 /* KKMetaDataTest.m in Sources */,
 				F9B11AF91BA909BB00ECF92C /* ___Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

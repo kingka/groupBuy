@@ -30,14 +30,16 @@
 
 @implementation KKMetaDataTool
 KKSingletonM(MetaDataTool);
+
 -(NSArray *)categories{
     
     if(_categories == nil){
         
-        _categories = [KKCategory objectArrayWithFile:@"categories.plist"];
+        _categories = [KKCategory objectArrayWithFilename:@"categories.plist"];
     }
     return _categories;
 }
+
 
 
 - (NSArray *)cityGroups
