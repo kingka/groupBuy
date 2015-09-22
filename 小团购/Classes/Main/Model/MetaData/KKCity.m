@@ -7,7 +7,14 @@
 //
 
 #import "KKCity.h"
+#import "MJExtension.h"
+#import "KKRegion.h"
 
 @implementation KKCity
 
+
++(NSDictionary *)objectClassInArray{
+    
+    return @{@"regions" : [KKRegion class]};
+}
 @end

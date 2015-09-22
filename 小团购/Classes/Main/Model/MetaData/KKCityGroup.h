@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface KKCityGroup : NSObject
-
+/** 组标题 */
+@property (copy, nonatomic) NSString *title;
+/** 这组显示的城市 */
+@property (strong, nonatomic) NSArray *cities;
 @end
