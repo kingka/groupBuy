@@ -7,6 +7,8 @@
 //
 
 #import "KKDealsViewController.h"
+#import "UIBarButtonItem+Extension.h"
+
 
 
 @implementation KKDealsViewController
@@ -20,6 +22,56 @@
 
 -(void)viewDidLoad{
     
+    [self setupPath];
+    [self setupLeftNav];
+    [self setupRightNav];
+   
+}
+
+-(void)setupLeftNav{
+    
+    //logo
+    UIBarButtonItem *logoBtn = [UIBarButtonItem itemWithImageName:@"icon_meituan_logo" highlightImageName:@"icon_meituan_logo" target:nil action:nil];
+    
+    KKDealsTopMenu *category = [KKDealsTopMenu menu];
+    UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
+    self.categoryMenu = category;
+    
+    KKDealsTopMenu *region = [KKDealsTopMenu menu];
+    UIBarButtonItem *regionItem = [[UIBarButtonItem alloc]initWithCustomView:region];
+    self.regionMenu = region;
+    
+    KKDealsTopMenu *sort = [KKDealsTopMenu menu];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc]initWithCustomView:sort];
+    self.sortMenu = sort;
+    
+    self.navigationItem.leftBarButtonItems = @[logoBtn,categoryItem,regionItem,sortItem];
+
+}
+
+-(void)setupRightNav{
+
+    //map
+    UIBarButtonItem *mapBtn = [UIBarButtonItem itemWithImageName:@"icon_map" highlightImageName:@"icon_map_hightlighted" target:self action:@selector(mapBtnClick)];
+    mapBtn.customView.width = 70;
+    
+    //search
+    UIBarButtonItem *searchBtn = [UIBarButtonItem itemWithImageName:@"icon_search" highlightImageName:@"" target:self action:@selector(searchBtnClick)];
+    searchBtn.width = mapBtn.width;
+    
+    self.navigationItem.rightBarButtonItems = @[mapBtn,searchBtn];
+    
+}
+
+-(void)mapBtnClick{
+
+}
+
+-(void)searchBtnClick{
+    
+}
+
+-(void)setupPath{
     
     // 1.周边的item
     AwesomeMenuItem *mineItem = [self itemWithContent:@"icon_pathMenu_mine_normal" highlightedContent:@"icon_pathMenu_mine_highlighted"];
@@ -27,7 +79,7 @@
     AwesomeMenuItem *scanItem = [self itemWithContent:@"icon_pathMenu_scan_normal" highlightedContent:@"icon_pathMenu_scan_highlighted"];
     AwesomeMenuItem *moreItem = [self itemWithContent:@"icon_pathMenu_more_normal" highlightedContent:@"icon_pathMenu_more_highlighted"];
     NSArray *items = @[mineItem, collectItem, scanItem, moreItem];
-
+    
     // the start item, similar to "add" button of Path
     AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_normal"]
                                                        highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"]
@@ -39,7 +91,6 @@
     menu.delegate = self;
     [self.view addSubview:menu];
     CGFloat menuH = 200;
-    menu.backgroundColor = [UIColor darkGrayColor];
     
     //menu BG
     UIImageView *menuBG = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_pathMenu_background"]];
@@ -49,7 +100,7 @@
     [menuBG autoSetDimensionsToSize:menuBG.image.size];
     [menuBG autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
     [menuBG autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
-
+    
     //menu constrains
     [menu autoSetDimensionsToSize:CGSizeMake(200, menuH)];
     menu.startPoint = CGPointMake(menuBG.image.size.width * 0.5, menuH - menuBG.image.size.height * 0.5);
