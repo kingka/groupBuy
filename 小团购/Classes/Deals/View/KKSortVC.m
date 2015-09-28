@@ -10,13 +10,27 @@
 #import "UIView+Extension.h"
 #import "KKSort.h"
 #import "KKMetaDataTool.h"
+#import "UIButton+Extension.h"
 
-@interface sortButton : UIButton
+@interface KKSortButton : UIButton
 @property(strong, nonatomic)KKSort *sort;
 @end
 
-@implementation sortButton
+@implementation KKSortButton
 
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    if(self = [super initWithFrame:frame]){
+    
+        self.bgImage = @"btn_filter_normal";
+        self.selectedBgImage = @"btn_filter_selected";
+        self.titleColor = [UIColor blackColor];
+        self.selectedTitleColor = [UIColor whiteColor];
+
+    }
+    
+    return self;
+}
 -(void)setHighlighted:(BOOL)highlighted{
 
 }
@@ -32,6 +46,7 @@
 @interface KKSortVC ()
 
 @property(strong, nonatomic)KKSort *sortModel;
+@property(weak, nonatomic)KKSortButton *selectedButton;
 @end
 
 @implementation KKSortVC
@@ -54,14 +69,13 @@
     for(int i = 0 ; i< sortArray.count; i++){
         
         KKSort *sort = sortArray[i];
-        sortButton *button = [[sortButton alloc]init];
+        KKSortButton *button = [[KKSortButton alloc]init];
         button.sort = sort;
-        //[button setTitle:sort.label forState:UIControlStateNormal];
         CGFloat buttonY = buttonP + i*(buttonH + buttonP);
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.titleColor = [UIColor blackColor];
         [self.view addSubview:button];
-        
+        [button addTarget:self action:@selector(itemClick:)];
         scrollContentH = button.y + buttonP;
     }
     
@@ -75,5 +89,12 @@
 }
 
 
+-(void)itemClick:(KKSortButton*)btn{
+    
+    NSLog(@"click");
+    self.selectedButton.selected = NO;
+    btn.selected = YES;
+    self.selectedButton = btn;
+}
 
 @end

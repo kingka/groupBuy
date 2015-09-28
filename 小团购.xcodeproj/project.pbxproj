@@ -28,6 +28,7 @@
 		F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */; };
 		F93D7C6F1BB95CBF001663E0 /* KKRegionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */; };
 		F93D7C711BB9603D001663E0 /* KKSortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93D7C701BB9603D001663E0 /* KKSortVC.xib */; };
+		F93D7C741BB96E93001663E0 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C731BB96E93001663E0 /* UIButton+Extension.m */; };
 		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
@@ -107,6 +108,8 @@
 		F93D7C6D1BB95CBF001663E0 /* KKRegionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKRegionVC.h; path = ../View/KKRegionVC.h; sourceTree = "<group>"; };
 		F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKRegionVC.m; path = ../View/KKRegionVC.m; sourceTree = "<group>"; };
 		F93D7C701BB9603D001663E0 /* KKSortVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKSortVC.xib; sourceTree = "<group>"; };
+		F93D7C721BB96E93001663E0 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		F93D7C731BB96E93001663E0 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -403,6 +406,8 @@
 				F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */,
 				F9AC973F1BB7D4AF0061BC08 /* UIBarButtonItem+Extension.h */,
 				F9AC97401BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m */,
+				F93D7C721BB96E93001663E0 /* UIButton+Extension.h */,
+				F93D7C731BB96E93001663E0 /* UIButton+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
+				F93D7C741BB96E93001663E0 /* UIButton+Extension.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
 				F92FE91A1BB1336C00F28E60 /* KKDeal.m in Sources */,
