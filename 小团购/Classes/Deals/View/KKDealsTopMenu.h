@@ -15,7 +15,7 @@
 
 +(instancetype)menu;
 
-- (IBAction)buttonClick:(UIButton *)sender;
+- (void)addTarget:(id)target method:(SEL)method;
 
 
 @end

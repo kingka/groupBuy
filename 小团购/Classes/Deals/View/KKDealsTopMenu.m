@@ -23,8 +23,6 @@
     return [[[NSBundle mainBundle]loadNibNamed:@"KKDealsTopMenu" owner:nil options:nil  ]lastObject];
 }
 
-- (IBAction)buttonClick:(UIButton *)sender {
-}
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     
@@ -35,5 +33,10 @@
     }
     
     return self;
+}
+
+-(void)addTarget:(id)target method:(SEL)method{
+    
+    [self.menuButton addTarget:target action:method forControlEvents:UIControlEventTouchUpInside];
 }
 @end

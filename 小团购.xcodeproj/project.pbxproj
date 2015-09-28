@@ -24,6 +24,10 @@
 		F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9381BB1343500F28E60 /* sorts.plist */; };
 		F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */; };
 		F92FE9411BB154BD00F28E60 /* KKMetaDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */; };
+		F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */; };
+		F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */; };
+		F93D7C6F1BB95CBF001663E0 /* KKRegionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */; };
+		F93D7C711BB9603D001663E0 /* KKSortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93D7C701BB9603D001663E0 /* KKSortVC.xib */; };
 		F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */; };
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
@@ -96,6 +100,13 @@
 		F92FE93D1BB14EA700F28E60 /* KKMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMetaDataTool.h; sourceTree = "<group>"; };
 		F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTool.m; sourceTree = "<group>"; };
 		F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTest.m; sourceTree = "<group>"; };
+		F93D7C671BB95CA4001663E0 /* KKCategoriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKCategoriesVC.h; path = ../View/KKCategoriesVC.h; sourceTree = "<group>"; };
+		F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKCategoriesVC.m; path = ../View/KKCategoriesVC.m; sourceTree = "<group>"; };
+		F93D7C6A1BB95CB2001663E0 /* KKSortVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSortVC.h; path = ../View/KKSortVC.h; sourceTree = "<group>"; };
+		F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKSortVC.m; path = ../View/KKSortVC.m; sourceTree = "<group>"; };
+		F93D7C6D1BB95CBF001663E0 /* KKRegionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKRegionVC.h; path = ../View/KKRegionVC.h; sourceTree = "<group>"; };
+		F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKRegionVC.m; path = ../View/KKRegionVC.m; sourceTree = "<group>"; };
+		F93D7C701BB9603D001663E0 /* KKSortVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKSortVC.xib; sourceTree = "<group>"; };
 		F95EDFF51BABADDF00A2BF5B /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
 		F95EDFF61BABADDF00A2BF5B /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		F95EDFF71BABADDF00A2BF5B /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
@@ -261,6 +272,13 @@
 		F98FBAE21BABA590001D501B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F93D7C671BB95CA4001663E0 /* KKCategoriesVC.h */,
+				F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */,
+				F93D7C6A1BB95CB2001663E0 /* KKSortVC.h */,
+				F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */,
+				F93D7C701BB9603D001663E0 /* KKSortVC.xib */,
+				F93D7C6D1BB95CBF001663E0 /* KKRegionVC.h */,
+				F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */,
 				F98FBAE31BABA590001D501B /* KKDealsViewController.h */,
 				F98FBAE41BABA590001D501B /* KKDealsViewController.m */,
 			);
@@ -548,6 +566,7 @@
 				F92FE9391BB1343500F28E60 /* categories.plist in Resources */,
 				F9B11AE81BA909BB00ECF92C /* Main.storyboard in Resources */,
 				F9AC97481BB804820061BC08 /* KKDealsTopMenu.xib in Resources */,
+				F93D7C711BB9603D001663E0 /* KKSortVC.xib in Resources */,
 				F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */,
 				F9B11AED1BA909BB00ECF92C /* LaunchScreen.xib in Resources */,
 				F92FE93A1BB1343500F28E60 /* cities.plist in Resources */,
@@ -575,10 +594,12 @@
 				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,
 				F92FE9241BB133B800F28E60 /* KKGetSingleDealParam.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
+				F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */,
 				F9B11B711BA9594300ECF92C /* MJExtensionConst.m in Sources */,
 				F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */,
 				F9AC97461BB8046E0061BC08 /* KKDealsTopMenu.m in Sources */,
 				F9B11B761BA9594300ECF92C /* NSObject+MJClass.m in Sources */,
+				F93D7C6F1BB95CBF001663E0 /* KKRegionVC.m in Sources */,
 				F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */,
 				F9B11B741BA9594300ECF92C /* MJPropertyKey.m in Sources */,
 				F92FE91B1BB1336C00F28E60 /* KKFindDealParam.m in Sources */,
@@ -598,6 +619,7 @@
 				F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */,
 				F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
+				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,

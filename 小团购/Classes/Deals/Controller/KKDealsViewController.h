@@ -18,4 +18,9 @@
 @property (nonatomic , weak) KKDealsTopMenu *categoryMenu;
 @property (nonatomic , weak) KKDealsTopMenu *sortMenu;
 @property (nonatomic , weak) KKDealsTopMenu *regionMenu;
+
+@property (nonatomic , strong) UIPopoverController *categoryPC;
+@property (nonatomic , strong) UIPopoverController *sortPC;
+@property (nonatomic , strong) UIPopoverController *regionPC;
+
 @end

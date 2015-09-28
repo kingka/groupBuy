@@ -8,11 +8,57 @@
 
 #import "KKDealsViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "KKCategoriesVC.h"
+#import "KKRegionVC.h"
+#import "KKSortVC.h"
 
 
 
 @implementation KKDealsViewController
 
+#pragma mark - lazy loading
+
+-(UIPopoverController *)categoryPC{
+    
+    if(_categoryPC == nil){
+        KKCategoriesVC *VC = [[KKCategoriesVC alloc]init];
+        self.categoryPC = [[UIPopoverController alloc]initWithContentViewController:VC];
+        
+    }
+    return _categoryPC;
+}
+
+-(UIPopoverController *)regionPC{
+
+    if(_regionPC == nil){
+        KKRegionVC *VC = [[KKRegionVC alloc]init];
+        self.regionPC = [[UIPopoverController alloc]initWithContentViewController:VC];
+        
+    }
+    return _regionPC;
+}
+
+-(UIPopoverController *)sortPC{
+    
+    if(!_sortPC){
+        KKSortVC *VC = [[KKSortVC alloc]init];
+        self.sortPC = [[UIPopoverController alloc]initWithContentViewController:VC];
+        
+    }
+    return _sortPC;
+}
+
+#pragma mark - Lifecycle
+-(void)viewDidLoad{
+    
+    [self setupPath];
+    [self setupLeftNav];
+    [self setupRightNav];
+    
+}
+
+
+#pragma mark - Private methods
 -(AwesomeMenuItem *)itemWithContent:(NSString*)contentImage highlightedContent:(NSString*)highlightedContentImage{
     
     UIImage *bgItem = [UIImage imageNamed:@"bg_pathMenu_black_normal"];
@@ -20,13 +66,7 @@
     return menuItem;
 }
 
--(void)viewDidLoad{
-    
-    [self setupPath];
-    [self setupLeftNav];
-    [self setupRightNav];
-   
-}
+
 
 -(void)setupLeftNav{
     
@@ -36,14 +76,18 @@
     KKDealsTopMenu *category = [KKDealsTopMenu menu];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
     self.categoryMenu = category;
+    [category addTarget:self method:@selector(categoryItemClick:)];
     
     KKDealsTopMenu *region = [KKDealsTopMenu menu];
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc]initWithCustomView:region];
     self.regionMenu = region;
+    [region addTarget:self method:@selector(regionItemClick:)];
     
     KKDealsTopMenu *sort = [KKDealsTopMenu menu];
+    [sort addTarget:self method:@selector(sortItemClick:)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc]initWithCustomView:sort];
     self.sortMenu = sort;
+    
     
     self.navigationItem.leftBarButtonItems = @[logoBtn,categoryItem,regionItem,sortItem];
 
@@ -71,6 +115,24 @@
     
 }
 
+-(void)categoryItemClick:(id)sender{
+    
+    [self.categoryPC presentPopoverFromRect:self.categoryMenu.bounds inView:self.categoryMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+-(void)sortItemClick:(id)sender{
+    
+    [self.sortPC presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+}
+
+-(void)regionItemClick:(id)sender{
+    
+    [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+
+#pragma mark - Path
 -(void)setupPath{
     
     // 1.周边的item
