@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKDropDownMenu.h"
 
 @interface KKCategoriesVC : UIViewController
 

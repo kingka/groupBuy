@@ -33,6 +33,9 @@
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
 		F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */; };
+		F989CDE11BBA7786006589F7 /* KKDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */; };
+		F989CDE31BBA7798006589F7 /* KKDropDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989CDE21BBA7798006589F7 /* KKDropDownMenu.xib */; };
+		F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989CDE41BBA817D006589F7 /* KKRegionVC.xib */; };
 		F98FBAE51BABA590001D501B /* KKDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE41BABA590001D501B /* KKDealsViewController.m */; };
 		F98FBAE91BABA5ED001D501B /* KKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98FBAE81BABA5ED001D501B /* KKNavigationController.m */; };
 		F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AC97401BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m */; };
@@ -118,6 +121,10 @@
 		F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		F989CDDF1BBA7786006589F7 /* KKDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDropDownMenu.h; sourceTree = "<group>"; };
+		F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDropDownMenu.m; sourceTree = "<group>"; };
+		F989CDE21BBA7798006589F7 /* KKDropDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKDropDownMenu.xib; sourceTree = "<group>"; };
+		F989CDE41BBA817D006589F7 /* KKRegionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKRegionVC.xib; sourceTree = "<group>"; };
 		F98FBAE31BABA590001D501B /* KKDealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealsViewController.h; sourceTree = "<group>"; };
 		F98FBAE41BABA590001D501B /* KKDealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealsViewController.m; sourceTree = "<group>"; };
 		F98FBAE71BABA5ED001D501B /* KKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigationController.h; sourceTree = "<group>"; };
@@ -282,6 +289,7 @@
 				F93D7C701BB9603D001663E0 /* KKSortVC.xib */,
 				F93D7C6D1BB95CBF001663E0 /* KKRegionVC.h */,
 				F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */,
+				F989CDE41BBA817D006589F7 /* KKRegionVC.xib */,
 				F98FBAE31BABA590001D501B /* KKDealsViewController.h */,
 				F98FBAE41BABA590001D501B /* KKDealsViewController.m */,
 			);
@@ -303,6 +311,9 @@
 				F9AC97441BB8046E0061BC08 /* KKDealsTopMenu.h */,
 				F9AC97451BB8046E0061BC08 /* KKDealsTopMenu.m */,
 				F9AC97471BB804820061BC08 /* KKDealsTopMenu.xib */,
+				F989CDDF1BBA7786006589F7 /* KKDropDownMenu.h */,
+				F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */,
+				F989CDE21BBA7798006589F7 /* KKDropDownMenu.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -571,11 +582,13 @@
 				F92FE9391BB1343500F28E60 /* categories.plist in Resources */,
 				F9B11AE81BA909BB00ECF92C /* Main.storyboard in Resources */,
 				F9AC97481BB804820061BC08 /* KKDealsTopMenu.xib in Resources */,
+				F989CDE31BBA7798006589F7 /* KKDropDownMenu.xib in Resources */,
 				F93D7C711BB9603D001663E0 /* KKSortVC.xib in Resources */,
 				F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */,
 				F9B11AED1BA909BB00ECF92C /* LaunchScreen.xib in Resources */,
 				F92FE93A1BB1343500F28E60 /* cities.plist in Resources */,
 				F9B11AEA1BA909BB00ECF92C /* Images.xcassets in Resources */,
+				F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */,
 				F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +610,7 @@
 				F92FE9331BB1341E00F28E60 /* KKCityGroup.m in Sources */,
 				F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */,
 				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,
+				F989CDE11BBA7786006589F7 /* KKDropDownMenu.m in Sources */,
 				F92FE9241BB133B800F28E60 /* KKGetSingleDealParam.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
 				F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */,

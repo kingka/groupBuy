@@ -84,6 +84,10 @@
     [region addTarget:self method:@selector(regionItemClick:)];
     
     KKDealsTopMenu *sort = [KKDealsTopMenu menu];
+    sort.titleLabel.text = @"排序";
+    sort.subTitleLabel.text = @"默认";
+    sort.menuButton.image = @"icon_sort";
+    sort.menuButton.highlightedImage = @"icon_sort_highlighted";
     [sort addTarget:self method:@selector(sortItemClick:)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc]initWithCustomView:sort];
     self.sortMenu = sort;

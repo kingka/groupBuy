@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIButton+Extension.h"
 
 @interface KKDealsTopMenu : UIView
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
