@@ -8,6 +8,7 @@
 
 #import "KKCategoriesVC.h"
 #import "UIView+Extension.h"
+#import "KKMetaDataTool.h"
 
 @interface KKCategoriesVC ()
 
@@ -17,13 +18,17 @@
 
 -(void)loadView{
     
-    self.view = [KKDropDownMenu dropDownMenu];
+    KKDropDownMenu *menu = [KKDropDownMenu dropDownMenu];
+    self.view = menu;
+    NSArray *categories = [KKMetaDataTool sharedMetaDataTool].categories;
+    menu.items = categories;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
-    self.preferredContentSize = self.view.size;
+    [super viewDidLoad];
+
+    self.preferredContentSize = CGSizeMake(350, 480);
 }
 
 

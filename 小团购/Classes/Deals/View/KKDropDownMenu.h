@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol KKDropDownMenuItem <NSObject>
+
+@required
+- (NSString*)title;
+- (NSArray *)subItems;
+@optional
+-(NSString*)iconName;
+-(NSString*)iconHighlightedName;
+@end
+
 @interface KKDropDownMenu : UIView<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UITableView *subTableView;
+@property (nonatomic , strong) NSArray *items;
 
 +(instancetype)dropDownMenu;
 @end

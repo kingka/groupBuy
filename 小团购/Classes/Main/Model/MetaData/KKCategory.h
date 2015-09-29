@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "MJExtension.h"
+#import "KKDropDownMenu.h"
 
-@interface KKCategory : NSObject
+@interface KKCategory : NSObject<KKDropDownMenuItem>
 /** 类别名称 */
 @property (copy, nonatomic) NSString *name;
 /** 大图标 */

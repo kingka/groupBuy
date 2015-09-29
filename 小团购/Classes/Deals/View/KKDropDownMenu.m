@@ -7,6 +7,9 @@
 //
 
 #import "KKDropDownMenu.h"
+#import "KKCategory.h"
+#import "KKDropDownMainCell.h"
+#import "KKDropDownSubCell.h"
 
 @implementation KKDropDownMenu
 
@@ -18,30 +21,34 @@
 -(void)willMoveToWindow:(UIWindow *)newWindow{
     
     //self.mainTableView.backgroundColor = [UIColor grayColor];
-    //self.subTableView.backgroundColor = [UIColor blackColor];
+    self.subTableView.backgroundColor = [UIColor whiteColor];
     
 }
 
 #pragma mark - delegate
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    static NSString *ID = @"Main";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if(!cell){
-        
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    
+
     if(tableView == self.mainTableView){
         
-        cell.textLabel.text = [NSString stringWithFormat:@"main-%ld",(long)indexPath.row];
+        id<KKDropDownMenuItem> item = self.items[indexPath.row];
+        KKDropDownMainCell *cell = [KKDropDownMainCell cellWithTableView:tableView];
+        cell.item = item;
+        
+        return cell;
     }else{
         
-        cell.textLabel.text = [NSString stringWithFormat:@"sub-%ld",(long)indexPath.row];
+        KKDropDownSubCell *cell = [KKDropDownSubCell cellWithTableView:tableView];
+        NSInteger mainSelectRow = [self.mainTableView indexPathForSelectedRow].row;
+        NSArray *subItems = [self.items[mainSelectRow] subItems];
+        cell.textLabel.text = subItems[indexPath.row];
+        return cell;
     }
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return cell;
+    [self.subTableView reloadData];
 }
 
 #pragma mark - dateSource
@@ -49,11 +56,21 @@
     
     if(tableView == self.mainTableView){
         
-        return 5;
+        return self.items.count;
     }else{
         
-        return 10;
+        NSInteger mainSelectRow = [self.mainTableView indexPathForSelectedRow].row;
+        NSArray *subItems = [self.items[mainSelectRow] subItems];
+        return subItems.count;
     }
+}
+
+#pragma mark - 
+-(void)setItems:(NSArray *)items{
+    
+    _items = items;
+    [self.mainTableView reloadData];
+    [self.subTableView reloadData];
 }
 
 @end

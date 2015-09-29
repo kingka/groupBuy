@@ -10,4 +10,13 @@
 
 @implementation KKRegion
 
+-(NSString *)title{
+    
+    return _name;
+}
+
+-(NSArray *)subItems{
+    
+    return _subregions;
+}
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KKDropDownMenu.h"
 
-@interface KKRegion : NSObject
+@interface KKRegion : NSObject<KKDropDownMenuItem>
 /** 区域名称 */
 @property (copy, nonatomic) NSString *name;
 /** 子区域 */

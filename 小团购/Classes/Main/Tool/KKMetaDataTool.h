@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KKSingleton.h"
+#import "KKCity.h"
 
 @interface KKMetaDataTool : NSObject
 KKSingletonH(MetaDataTool)
@@ -28,4 +29,6 @@ KKSingletonH(MetaDataTool)
  *  所有的排序
  */
 @property (strong, nonatomic, readonly) NSArray *sorts;
+
+-(KKCity*)cityWithName:(NSString *)name;
 @end

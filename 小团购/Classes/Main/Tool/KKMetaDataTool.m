@@ -66,4 +66,16 @@ KKSingletonM(MetaDataTool);
     return _sorts;
 }
 
+-(KKCity *)cityWithName:(NSString *)name{
+    
+    for(KKCity *city in self.cities){
+        
+        if([city.name isEqualToString:name]){
+            
+            return city;
+        }
+    }
+    return nil;
+}
+
 @end

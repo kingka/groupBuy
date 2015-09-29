@@ -9,6 +9,8 @@
 #import "KKRegionVC.h"
 #import "KKDropDownMenu.h"
 #import "UIView+AutoLayout.h"
+#import "KKMetaDataTool.h"
+
 
 @interface KKRegionVC ()
 
@@ -19,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     KKDropDownMenu *menu = [KKDropDownMenu dropDownMenu];
+    KKMetaDataTool *tool = [KKMetaDataTool sharedMetaDataTool];
+    KKCity *city = [tool cityWithName:@"北京"];
+    menu.items = city.regions;
     [self.view addSubview:menu];
     UIView *topView = [self.view.subviews firstObject];
     
