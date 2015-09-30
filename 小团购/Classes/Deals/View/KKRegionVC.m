@@ -10,6 +10,8 @@
 #import "KKDropDownMenu.h"
 #import "UIView+AutoLayout.h"
 #import "KKMetaDataTool.h"
+#import "KKCitiesController.h"
+
 
 
 @interface KKRegionVC ()
@@ -35,4 +37,16 @@
 
 
 
+- (IBAction)changeCity:(UIButton *)sender {
+    
+    if(self.changeCityBlock){
+        self.changeCityBlock();
+    }
+   
+    
+    KKCitiesController *vc = [[KKCitiesController alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 @end

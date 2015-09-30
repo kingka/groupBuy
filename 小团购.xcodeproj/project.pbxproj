@@ -33,6 +33,8 @@
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
 		F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */; };
+		F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98721A01BBBB732005BFE34 /* KKCitiesController.m */; };
+		F98721A31BBBB732005BFE34 /* KKCitiesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98721A11BBBB732005BFE34 /* KKCitiesController.xib */; };
 		F989CDE11BBA7786006589F7 /* KKDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */; };
 		F989CDE31BBA7798006589F7 /* KKDropDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989CDE21BBA7798006589F7 /* KKDropDownMenu.xib */; };
 		F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F989CDE41BBA817D006589F7 /* KKRegionVC.xib */; };
@@ -123,6 +125,11 @@
 		F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		F987219F1BBBB732005BFE34 /* KKCitiesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCitiesController.h; sourceTree = "<group>"; };
+		F98721A01BBBB732005BFE34 /* KKCitiesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCitiesController.m; sourceTree = "<group>"; };
+		F98721A11BBBB732005BFE34 /* KKCitiesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKCitiesController.xib; sourceTree = "<group>"; };
+		F98721A41BBBBCD9005BFE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		F98721A51BBBBCD9005BFE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F989CDDF1BBA7786006589F7 /* KKDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDropDownMenu.h; sourceTree = "<group>"; };
 		F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDropDownMenu.m; sourceTree = "<group>"; };
 		F989CDE21BBA7798006589F7 /* KKDropDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKDropDownMenu.xib; sourceTree = "<group>"; };
@@ -298,6 +305,9 @@
 				F989CDE41BBA817D006589F7 /* KKRegionVC.xib */,
 				F98FBAE31BABA590001D501B /* KKDealsViewController.h */,
 				F98FBAE41BABA590001D501B /* KKDealsViewController.m */,
+				F987219F1BBBB732005BFE34 /* KKCitiesController.h */,
+				F98721A01BBBB732005BFE34 /* KKCitiesController.m */,
+				F98721A11BBBB732005BFE34 /* KKCitiesController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -599,6 +609,7 @@
 				F92FE93A1BB1343500F28E60 /* cities.plist in Resources */,
 				F9B11AEA1BA909BB00ECF92C /* Images.xcassets in Resources */,
 				F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */,
+				F98721A31BBBB732005BFE34 /* KKCitiesController.xib in Resources */,
 				F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +660,7 @@
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
 				F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */,
 				F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */,
+				F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
 				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
@@ -688,6 +700,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9B11AE71BA909BB00ECF92C /* Base */,
+				F98721A41BBBBCD9005BFE34 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -696,6 +709,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9B11AEC1BA909BB00ECF92C /* Base */,
+				F98721A51BBBBCD9005BFE34 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

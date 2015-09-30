@@ -10,4 +10,7 @@
 
 @interface KKRegionVC : UIViewController
 
+@property (nonatomic , copy) void(^changeCityBlock)();
+- (IBAction)changeCity:(UIButton *)sender;
+
 @end

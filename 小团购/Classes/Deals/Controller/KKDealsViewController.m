@@ -33,7 +33,10 @@
     if(_regionPC == nil){
         KKRegionVC *VC = [[KKRegionVC alloc]init];
         self.regionPC = [[UIPopoverController alloc]initWithContentViewController:VC];
-        
+        __weak typeof(self) viewController = self;
+        VC.changeCityBlock = ^(){
+            [viewController.regionPC dismissPopoverAnimated:YES];
+        };
     }
     return _regionPC;
 }
