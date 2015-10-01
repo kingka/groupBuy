@@ -48,7 +48,23 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self.subTableView reloadData];
+    if(tableView == self.mainTableView){//main
+        
+        if([self.delegate respondsToSelector:@selector(dropDownMenu:mainRow:)]){
+            
+            [self.delegate dropDownMenu:self mainRow:indexPath.row];
+        }
+        
+        [self.subTableView reloadData];
+    }else{//sub
+    
+        if([self.delegate respondsToSelector:@selector(dropDownMenu:subRow:ofMain:)]){
+            
+            NSInteger mainRow = [self.mainTableView indexPathForSelectedRow].row;
+            [self.delegate dropDownMenu:self subRow:indexPath.row ofMain:mainRow];
+        }
+    }
+    
 }
 
 #pragma mark - dateSource

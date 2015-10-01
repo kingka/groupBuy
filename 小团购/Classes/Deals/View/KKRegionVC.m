@@ -11,21 +11,23 @@
 #import "UIView+AutoLayout.h"
 #import "KKMetaDataTool.h"
 #import "KKCitiesController.h"
-
+#import "KKDealsConst.h"
 
 
 @interface KKRegionVC ()
 
+@property(weak, nonatomic)KKDropDownMenu *menu;
+@property(strong, nonatomic)KKRegion *selectedRegion;
 @end
 
 @implementation KKRegionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     KKDropDownMenu *menu = [KKDropDownMenu dropDownMenu];
-    KKMetaDataTool *tool = [KKMetaDataTool sharedMetaDataTool];
-    KKCity *city = [tool cityWithName:@"北京"];
-    menu.items = city.regions;
+    self.menu = menu;
+    self.menu.delegate = self;
     [self.view addSubview:menu];
     UIView *topView = [self.view.subviews firstObject];
     
@@ -51,5 +53,33 @@
     vc.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:vc animated:YES completion:nil];
     
+}
+
+-(void)setRegions:(NSArray *)regions{
+    
+    _regions = regions;
+    self.menu.items = regions;
+}
+
+#pragma mark - KKDropDownMenuDelegate
+-(void)dropDownMenu:(KKDropDownMenu *)dpMenu mainRow:(NSInteger)row{
+
+    KKRegion *region = self.regions[row];
+    self.selectedRegion = region;
+    if(region.subregions.count == 0){
+        
+        //sent Notification
+        [KKNotificationCenter postNotificationName:KKRegionDidSelectNotification object:nil userInfo:@{KKSelectedRegion:region}];
+    }
+}
+
+-(void)dropDownMenu:(KKDropDownMenu *)dpMenu subRow:(NSInteger)subRow ofMain:(NSInteger)mainRow{
+    
+    NSArray *subRegions = self.selectedRegion.subregions;
+    
+    NSString *subRegion = subRegions[subRow];
+    
+    //sent Notification
+    [KKNotificationCenter postNotificationName:KKRegionDidSelectNotification object:nil userInfo:@{KKSelectedRegion:self.selectedRegion,KKSelectedSubRegion:subRegion}];
 }
 @end

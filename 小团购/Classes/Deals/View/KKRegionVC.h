@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface KKRegionVC : UIViewController
-
+#import "KKDropDownMenu.h"
+#import "KKRegion.h"
+@interface KKRegionVC : UIViewController<KKDropDownMenuDelegate>
+@property (nonatomic , strong) NSArray *regions;
 @property (nonatomic , copy) void(^changeCityBlock)();
 - (IBAction)changeCity:(UIButton *)sender;
-
 @end

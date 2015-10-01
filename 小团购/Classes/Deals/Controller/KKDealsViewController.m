@@ -11,8 +11,19 @@
 #import "KKCategoriesVC.h"
 #import "KKRegionVC.h"
 #import "KKSortVC.h"
+#import "KKCity.h"
+#import "KKRegion.h"
+#import "KKCategory.h"
+#import "KKDealsConst.h"
 
+@interface KKDealsViewController()
 
+@property(strong, nonatomic)KKCity *selectedCity;
+@property(strong, nonatomic)KKRegion *selectedRegion;
+@property(strong, nonatomic)NSString *selectedSubRegion;
+@property(strong, nonatomic)KKCategory *selectedCategory;
+@property(strong, nonatomic)NSString *selectedSubCategory;
+@end
 
 @implementation KKDealsViewController
 
@@ -54,6 +65,7 @@
 #pragma mark - Lifecycle
 -(void)viewDidLoad{
     
+    [self setupNotification];
     [self setupPath];
     [self setupLeftNav];
     [self setupRightNav];
@@ -62,6 +74,14 @@
 
 
 #pragma mark - Private methods
+-(void)setupNotification{
+    
+    KKAddObserver(sortClicked:, KKSortDidSelectNotification);
+    KKAddObserver(regionClicked:, KKRegionDidSelectNotification);
+    KKAddObserver(categoryClicked:, KKCategoryDidSelectNotification);
+    KKAddObserver(cityClicked:, KKCityDidSelectNotification);
+}
+
 -(AwesomeMenuItem *)itemWithContent:(NSString*)contentImage highlightedContent:(NSString*)highlightedContentImage{
     
     UIImage *bgItem = [UIImage imageNamed:@"bg_pathMenu_black_normal"];
@@ -137,7 +157,44 @@
     
     [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
+#pragma mark - Handle Notification
+-(void)sortClicked:(NSNotification *)info{
+    
+    [self.sortPC dismissPopoverAnimated:YES];
+}
 
+-(void)cityClicked:(NSNotification *)info{
+    
+    //analysis info
+    KKCity *city = info.userInfo[KKSelectedCity];
+    self.regionMenu.titleLabel.text = city.name;
+    self.selectedCity = city;
+    
+    //change region's source
+    KKRegionVC *regionVC = (KKRegionVC*)self.regionPC.contentViewController;
+    regionVC.regions = city.regions;
+}
+
+-(void)regionClicked:(NSNotification *)info{
+    
+    //analysis info
+    KKRegion *region = info.userInfo[KKSelectedRegion];
+    NSString *subRegion = info.userInfo[KKSelectedSubRegion];
+    
+    self.selectedSubCategory = subRegion;
+    self.selectedRegion = region;
+    
+    self.regionMenu.titleLabel.text = region.name;
+    self.regionMenu.subTitleLabel.text = subRegion;
+    
+    //dismiss popover
+    [self.regionPC dismissPopoverAnimated:YES];
+}
+
+-(void)categoryClicked:(NSNotification *)info{
+    
+    [self.categoryPC dismissPopoverAnimated:YES];
+}
 
 #pragma mark - Path
 -(void)setupPath{
