@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90976C31BBCDF140018B92E /* KKCitiesResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90976C21BBCDF140018B92E /* KKCitiesResultController.m */; };
 		F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE90B1BB1336C00F28E60 /* KKBusiness.m */; };
 		F92FE91A1BB1336C00F28E60 /* KKDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE90D1BB1336C00F28E60 /* KKDeal.m */; };
 		F92FE91B1BB1336C00F28E60 /* KKFindDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9101BB1336C00F28E60 /* KKFindDealParam.m */; };
@@ -79,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F90976C11BBCDF140018B92E /* KKCitiesResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCitiesResultController.h; sourceTree = "<group>"; };
+		F90976C21BBCDF140018B92E /* KKCitiesResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCitiesResultController.m; sourceTree = "<group>"; };
 		F92FE90A1BB1336C00F28E60 /* KKBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKBusiness.h; sourceTree = "<group>"; };
 		F92FE90B1BB1336C00F28E60 /* KKBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKBusiness.m; sourceTree = "<group>"; };
 		F92FE90C1BB1336C00F28E60 /* KKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDeal.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				F987219F1BBBB732005BFE34 /* KKCitiesController.h */,
 				F98721A01BBBB732005BFE34 /* KKCitiesController.m */,
 				F98721A11BBBB732005BFE34 /* KKCitiesController.xib */,
+				F90976C11BBCDF140018B92E /* KKCitiesResultController.h */,
+				F90976C21BBCDF140018B92E /* KKCitiesResultController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */,
 				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,
 				F989CDE11BBA7786006589F7 /* KKDropDownMenu.m in Sources */,
+				F90976C31BBCDF140018B92E /* KKCitiesResultController.m in Sources */,
 				F92FE9241BB133B800F28E60 /* KKGetSingleDealParam.m in Sources */,
 				F9B11B771BA9594300ECF92C /* NSObject+MJCoding.m in Sources */,
 				F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */,

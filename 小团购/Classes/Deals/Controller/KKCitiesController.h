@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *coverBtn;
 - (IBAction)coverClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarTopLc;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -10,6 +10,7 @@
                 <outlet property="coverBtn" destination="SBg-Yh-0Me" id="NgG-GJ-n3v"/>
                 <outlet property="navBarTopLc" destination="NvQ-hn-jp5" id="hnI-H4-wcD"/>
                 <outlet property="searchBar" destination="lRG-zv-OX5" id="4eB-od-Bwn"/>
+                <outlet property="tableView" destination="3sF-zS-75C" id="Frj-hc-X54"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -69,6 +70,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-zS-75C">
                     <rect key="frame" x="10" y="126" width="300" height="442"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="uQP-Bb-vLI"/>
+                        <outlet property="delegate" destination="-1" id="K8J-jl-tfX"/>
+                    </connections>
                 </tableView>
                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-Yh-0Me" userLabel="cover">
                     <rect key="frame" x="0.0" y="126" width="320" height="442"/>
