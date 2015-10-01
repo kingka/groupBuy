@@ -7,9 +7,11 @@
 //
 
 #import "KKCitiesResultController.h"
+#import "KKDealsConst.h"
 
 @interface KKCitiesResultController ()
 
+@property (strong, nonatomic)NSArray *resultCities;
 @end
 
 @implementation KKCitiesResultController
@@ -24,72 +26,87 @@
     // Dispose of any resources that can be recreated.
 }
 
+//-(NSArray *)resultCities{
+//    
+//    if(_resultCities == nil){
+//        
+//        self.resultCities = [NSArray array];
+//    }
+//    
+//    return _resultCities;
+//}
+-(void)setSearchText:(NSString *)searchText{
+    
+    _searchText = searchText;
+    
+//    for(KKCity *city in self.cities){
+//        BOOL condiction1 = [city.pinYin rangeOfString:searchText].length>0;
+//        BOOL condiction2 = [city.name rangeOfString:searchText].length>0;
+//        BOOL condiction3 = [city.pinYinHead rangeOfString:searchText].length>0;
+//        
+//        if(condiction1 || condiction2 || condiction3){
+//            
+//            [self.resultCities addObject:city];
+//        }
+//    }
+    NSString *lowerText = searchText.lowercaseString;
+    //第二种查询方法 ：NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name.lowercaseString contains %@ or pinYin.lowercaseString contains %@ or pinYinHead.lowercaseString contains %@",lowerText,lowerText,lowerText];
+    //这里取到的是city 模型
+    self.resultCities = [self.cities filteredArrayUsingPredicate:predicate];
+    [self.tableView reloadData];
+    
+}
+
+-(NSArray *)cities{
+    
+    if(_cities == nil){
+        
+        self.cities = [KKMetaDataTool sharedMetaDataTool].cities;
+    }
+    return _cities;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return  self.resultCities.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *ID =@"kkresultcity";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if(cell == nil){
+        
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    KKCity *city = self.resultCities[indexPath.row];
+    cell.textLabel.text = city.name;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    return [NSString stringWithFormat:@"共有%lu个搜索结果", (unsigned long)self.resultCities.count];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+#pragma mark - tableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    KKCity *city = self.resultCities[indexPath.row];
+    [KKNotificationCenter postNotificationName:KKCityDidSelectNotification object:nil userInfo:@{KKSelectedCity:city}];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

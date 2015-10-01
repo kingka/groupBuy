@@ -39,9 +39,12 @@
 
 - (IBAction)changeCity:(UIButton *)sender {
     
-    if(self.changeCityBlock){
-        self.changeCityBlock();
-    }
+     if ([[[UIDevice currentDevice] systemVersion] floatValue] <= 7.1) {
+    
+         if(self.changeCityBlock){
+             self.changeCityBlock();
+         }
+     }
    
     
     KKCitiesController *vc = [[KKCitiesController alloc]init];

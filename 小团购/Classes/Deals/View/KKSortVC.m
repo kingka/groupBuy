@@ -11,6 +11,7 @@
 #import "KKSort.h"
 #import "KKMetaDataTool.h"
 #import "UIButton+Extension.h"
+#import "KKDealsConst.h"
 
 @interface KKSortButton : UIButton
 @property(strong, nonatomic)KKSort *sort;
@@ -91,10 +92,14 @@
 
 -(void)itemClick:(KKSortButton*)btn{
     
-    NSLog(@"click");
     self.selectedButton.selected = NO;
     btn.selected = YES;
     self.selectedButton = btn;
+    
+    //sent notification
+    [KKNotificationCenter postNotificationName:KKSortDidSelectNotification object:nil userInfo:@{KKSelectedSort:btn.sort}];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

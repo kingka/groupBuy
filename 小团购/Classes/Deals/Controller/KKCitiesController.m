@@ -11,6 +11,7 @@
 #import "UIView+AutoLayout.h"
 #import "KKMetaDataTool.h"
 #import "KKCityGroup.h"
+#import "KKDealsConst.h"
 
 @interface KKCitiesController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 - (IBAction)closeClick:(UIButton *)sender;
@@ -76,6 +77,7 @@
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
     
+    searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
     searchBar.showsCancelButton = NO;
     self.navBarTopLc.constant = 0;
     [UIView animateWithDuration:0.25 animations:^{
@@ -99,12 +101,14 @@
 
 #warning first to remove citiesVC.view is to make sure that add autoLayout constrains many times will not occur problem
     
-        [self.citiesVC.view removeFromSuperview];
-        if(searchText.length > 0){
-            [self.view addSubview:self.citiesVC.view];
-            [_citiesVC.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
-            [_citiesVC.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.coverBtn];
+    [self.citiesVC.view removeFromSuperview];
+    if(searchText.length > 0){
+        [self.view addSubview:self.citiesVC.view];
+        [_citiesVC.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [_citiesVC.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.coverBtn];
+            
     }
+    self.citiesVC.searchText = searchText;
 }
 
 #pragma mark - tableViewDataSource
@@ -146,6 +150,17 @@
 }
 #pragma mark - tableViewDelegate
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KKCityGroup *cityGroup = self.cityGroups[indexPath.section];
+    NSString *cityName = cityGroup.cities[indexPath.row];
+    KKCity *city = [[KKMetaDataTool sharedMetaDataTool] cityWithName:cityName];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //sent Notification
+    [KKNotificationCenter postNotificationName:KKCityDidSelectNotification object:nil userInfo:@{KKSelectedCity:city}];
+    
+}
 #pragma mark - Private Methods
 - (IBAction)coverClick:(UIButton *)sender {
     

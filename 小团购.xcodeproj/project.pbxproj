@@ -82,6 +82,7 @@
 /* Begin PBXFileReference section */
 		F90976C11BBCDF140018B92E /* KKCitiesResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCitiesResultController.h; sourceTree = "<group>"; };
 		F90976C21BBCDF140018B92E /* KKCitiesResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCitiesResultController.m; sourceTree = "<group>"; };
+		F90976C41BBD11DE0018B92E /* KKDealsConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDealsConst.h; sourceTree = "<group>"; };
 		F92FE90A1BB1336C00F28E60 /* KKBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKBusiness.h; sourceTree = "<group>"; };
 		F92FE90B1BB1336C00F28E60 /* KKBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKBusiness.m; sourceTree = "<group>"; };
 		F92FE90C1BB1336C00F28E60 /* KKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDeal.h; sourceTree = "<group>"; };
@@ -429,6 +430,7 @@
 				F9B11B481BA90C1000ECF92C /* Category */,
 				F9B11B491BA90C1000ECF92C /* Lib */,
 				F9B11B561BA941E100ECF92C /* KKSingleton.h */,
+				F90976C41BBD11DE0018B92E /* KKDealsConst.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";

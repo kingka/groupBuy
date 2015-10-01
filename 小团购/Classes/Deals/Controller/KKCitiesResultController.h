@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKMetaDataTool.h"
+#import "KKCity.h"
 
 @interface KKCitiesResultController : UITableViewController
 
+@property (strong, nonatomic)NSString* searchText;
+@property (strong, nonatomic)NSArray *cities;
 @end
