@@ -69,6 +69,12 @@
         
         //sent Notification
         [KKNotificationCenter postNotificationName:KKRegionDidSelectNotification object:nil userInfo:@{KKSelectedRegion:region}];
+    }else{//subCategory.count>0
+        
+        if(self.selectedRegion == region){
+            
+            self.selectedSubRegion = self.selectedSubRegion;
+        }
     }
 }
 
@@ -91,7 +97,7 @@
 
 -(void)setSelectedSubRegion:(NSString *)selectedSubRegion{
     
-    _selectedSubRegion = selectedSubRegion;
+    _selectedSubRegion = [selectedSubRegion copy];
     NSArray *subRegions = self.selectedRegion.subregions;
     NSInteger subRow = [subRegions indexOfObject:selectedSubRegion];
     [self.menu selectedSubRow:subRow];

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "KKDropDownMenu.h"
+#import "KKCategory.h"
 
 @interface KKCategoriesVC : UIViewController
-
+@property (strong, nonatomic)KKCategory *selectedCategory;
+@property (nonatomic , copy) NSString *selectedSubCategory;
 @end

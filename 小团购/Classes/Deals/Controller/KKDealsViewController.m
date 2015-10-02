@@ -151,6 +151,10 @@
 
 -(void)categoryItemClick:(id)sender{
     
+    KKCategoriesVC *categoryVC = (KKCategoriesVC*)self.categoryPC.contentViewController;
+    categoryVC.selectedCategory = self.selectedCategory;
+    categoryVC.selectedSubCategory = self.selectedSubCategory;
+    
     [self.categoryPC presentPopoverFromRect:self.categoryMenu.bounds inView:self.categoryMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
@@ -165,6 +169,7 @@
     KKRegionVC *regionVC = (KKRegionVC*)self.regionPC.contentViewController;
     regionVC.selectedRegion = self.selectedRegion;
     regionVC.selectedSubRegion = self.selectedSubRegion;
+    
     [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 #pragma mark - Handle Notification

@@ -10,15 +10,17 @@
 #import "UIView+Extension.h"
 #import "KKMetaDataTool.h"
 #import "KKDropDownMenu.h"
-#import "KKCategory.h"
+
 #import "KKDealsConst.h"
 @interface KKCategoriesVC ()<KKDropDownMenuDelegate>
 @property (weak, nonatomic)KKDropDownMenu *menu;
-@property (strong, nonatomic)KKCategory *selectedCategory;
+
 @end
 
 @implementation KKCategoriesVC
 
+
+#pragma mark - lifecycle
 -(void)loadView{
     
     KKDropDownMenu *menu = [KKDropDownMenu dropDownMenu];
@@ -41,20 +43,44 @@
 -(void)dropDownMenu:(KKDropDownMenu *)dpMenu mainRow:(NSInteger)row{
 
     KKCategory *category = self.menu.items[row];
-    self.selectedCategory = category;
+
     if(category.subcategories.count == 0){
         
         //sent notification
         [KKNotificationCenter postNotificationName:KKCategoryDidSelectNotification object:nil userInfo:@{KKSelectedCategory:category}];
+    }else{//category.subcategories.count>0
+        
+        //控制再次点击方才选中的主category时， subCategory 可以显示方才选中的
+        if(self.selectedCategory == category){
+            
+            self.selectedSubCategory = self.selectedSubCategory;
+        }
     }
 }
 
 -(void)dropDownMenu:(KKDropDownMenu *)dpMenu subRow:(NSInteger)subRow ofMain:(NSInteger)mainRow{
     
-    NSArray *subCategorys = self.selectedCategory.subcategories;
+    KKCategory *category = dpMenu.items[mainRow];
+    NSArray *subCategorys = category.subcategories;
     NSString *subCategory = subCategorys[subRow];
     
     //sent notification
-    [KKNotificationCenter postNotificationName:KKCategoryDidSelectNotification object:nil userInfo:@{KKSelectedSubCategory:subCategory,KKSelectedCategory:self.selectedCategory}];
+    [KKNotificationCenter postNotificationName:KKCategoryDidSelectNotification object:nil userInfo:@{KKSelectedSubCategory:subCategory,KKSelectedCategory:category}];
+}
+
+#pragma mark - public methods
+-(void)setSelectedCategory:(KKCategory *)selectedCategory{
+
+    _selectedCategory = selectedCategory;
+    NSInteger mainRow = [self.menu.items indexOfObject:selectedCategory];
+    [self.menu selectedMainRow:mainRow];
+}
+
+-(void)setSelectedSubCategory:(NSString *)selectedSubCategory{
+
+    _selectedSubCategory = selectedSubCategory;
+    NSArray *subCategories = self.selectedCategory.subcategories;
+    NSInteger subRow = [subCategories indexOfObject:selectedSubCategory];
+    [self.menu selectedSubRow:subRow];
 }
 @end

@@ -46,6 +46,7 @@
         NSInteger mainSelectRow = [self.mainTableView indexPathForSelectedRow].row;
         NSArray *subItems = [self.items[mainSelectRow] subItems];
         cell.textLabel.text = subItems[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         return cell;
     }
     
@@ -96,7 +97,8 @@
 
 -(void)selectedSubRow:(NSInteger)subRow{
     
-    [self.subTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self.subTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
 }
 #pragma mark - 
 -(void)setItems:(NSArray *)items{
