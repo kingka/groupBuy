@@ -56,12 +56,13 @@
     
     if(tableView == self.mainTableView){//main
         
+        [self.subTableView reloadData];
         if([self.delegate respondsToSelector:@selector(dropDownMenu:mainRow:)]){
             
             [self.delegate dropDownMenu:self mainRow:indexPath.row];
         }
         
-        [self.subTableView reloadData];
+        
     }else{//sub
     
         if([self.delegate respondsToSelector:@selector(dropDownMenu:subRow:ofMain:)]){
@@ -97,7 +98,8 @@
 
 -(void)selectedSubRow:(NSInteger)subRow{
     
-    [self.subTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+
+    [self.subTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
     
 }
 #pragma mark - 

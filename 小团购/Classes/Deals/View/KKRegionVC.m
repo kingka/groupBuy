@@ -64,7 +64,7 @@
 #pragma mark - KKDropDownMenuDelegate
 -(void)dropDownMenu:(KKDropDownMenu *)dpMenu mainRow:(NSInteger)row{
 
-    KKRegion *region = self.regions[row];
+    KKRegion *region = dpMenu.items[row];
     if(region.subregions.count == 0){
         
         //sent Notification

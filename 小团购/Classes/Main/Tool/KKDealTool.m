@@ -18,6 +18,7 @@
     [tool requset:@"v1/deal/find_deals" params:params.keyValues success:^(id json) {
         if(success){
             KKFindDealResult *dealResult = [KKFindDealResult objectWithKeyValues:json];
+            NSLog(@"herereere");
             success(dealResult);
         }
         

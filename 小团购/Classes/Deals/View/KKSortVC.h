@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KKSort.h"
 @interface KKSortVC : UIViewController
 
+@property(strong, nonatomic)KKSort *selectedSort;
 @end

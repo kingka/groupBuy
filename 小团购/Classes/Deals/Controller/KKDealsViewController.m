@@ -16,6 +16,9 @@
 #import "KKCategory.h"
 #import "KKDealsConst.h"
 #import "KKSort.h"
+#import "KKFindDealParam.h"
+#import "KKDealTool.h"
+#import "MJExtension.h"
 
 @interface KKDealsViewController()
 @property(strong, nonatomic)KKSort *selectedSort;
@@ -160,6 +163,9 @@
 
 -(void)sortItemClick:(id)sender{
     
+    KKSortVC *sortVC = (KKSortVC*)self.sortPC.contentViewController;
+    sortVC.selectedSort = self.selectedSort;
+    
     [self.sortPC presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
 }
@@ -180,8 +186,11 @@
     self.selectedSort = sort;
     self.sortMenu.titleLabel.text = sort.label;
     
+   
     //dismiss popover
     [self.sortPC dismissPopoverAnimated:YES];
+    //call server
+    [self loadNewInfo];
 }
 
 -(void)cityClicked:(NSNotification *)info{
@@ -195,6 +204,8 @@
     //change region's source
     KKRegionVC *regionVC = (KKRegionVC*)self.regionPC.contentViewController;
     regionVC.regions = city.regions;
+    //call server
+    [self loadNewInfo];
 }
 
 -(void)regionClicked:(NSNotification *)info{
@@ -211,6 +222,8 @@
     
     //dismiss popover
     [self.regionPC dismissPopoverAnimated:YES];
+    //call server
+    [self loadNewInfo];
 }
 
 -(void)categoryClicked:(NSNotification *)info{
@@ -230,8 +243,50 @@
     //dismiss popover
 
     [self.categoryPC dismissPopoverAnimated:YES];
+    
+    //call server
+    [self loadNewInfo];
+}
+#pragma mark - sent post
+-(void)loadNewInfo{
+    
+    KKFindDealParam *param = [[KKFindDealParam alloc]init];
+    param.city = self.selectedCity.name;
+    // 排序
+    if (self.selectedSort) {
+        param.sort = @(self.selectedSort.value);
+    }
+    // 除开“全部分类”和“全部”以外的所有词语都可以发
+    // 分类
+    if (self.selectedCategory && ![self.selectedCategory.name isEqualToString:@"全部分类"]) {
+        if (self.selectedSubCategory && ![self.selectedSubCategory isEqualToString:@"全部"]) {
+            param.category = self.selectedSubCategory;
+        } else {
+            param.category = self.selectedCategory.name;
+        }
+    }
+    // 区域
+    if (self.selectedRegion && ![self.selectedRegion.name isEqualToString:@"全部"]) {
+        if (self.selectedSubRegion && ![self.selectedSubRegion isEqualToString:@"全部"]) {
+            param.region = self.selectedSubRegion;
+        } else {
+            param.region = self.selectedRegion.name;
+        }
+    }
+    // 设置单次返回的数量
+    param.limit = @(2);
+    NSLog(@"%@",param.keyValues);
+    [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
+        NSLog(@"%@",result.keyValues);
+    } failure:^(NSError *error) {
+        NSLog(@"网络有问题");
+    }];
+    
 }
 
+-(void)loadMoreInfo{
+
+}
 #pragma mark - Path
 -(void)setupPath{
     

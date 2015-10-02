@@ -102,4 +102,18 @@
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)setSelectedSort:(KKSort *)selectedSort{
+    
+    _selectedSort = selectedSort;
+    
+    for(KKSortButton *button in self.view.subviews){
+        
+        if([button isKindOfClass:[KKSortButton class]] && button.sort == selectedSort){
+            
+            self.selectedButton.selected = NO;
+            button.selected = YES;
+            self.selectedButton = button;
+        }
+    }
+}
 @end
