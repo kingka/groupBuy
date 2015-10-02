@@ -11,6 +11,8 @@
 #import "KKRegion.h"
 @interface KKRegionVC : UIViewController<KKDropDownMenuDelegate>
 @property (nonatomic , strong) NSArray *regions;
+@property (strong, nonatomic)KKRegion *selectedRegion;
+@property (copy, nonatomic)NSString *selectedSubRegion;
 @property (nonatomic , copy) void(^changeCityBlock)();
 - (IBAction)changeCity:(UIButton *)sender;
 @end

@@ -15,9 +15,10 @@
 #import "KKRegion.h"
 #import "KKCategory.h"
 #import "KKDealsConst.h"
+#import "KKSort.h"
 
 @interface KKDealsViewController()
-
+@property(strong, nonatomic)KKSort *selectedSort;
 @property(strong, nonatomic)KKCity *selectedCity;
 @property(strong, nonatomic)KKRegion *selectedRegion;
 @property(strong, nonatomic)NSString *selectedSubRegion;
@@ -44,6 +45,7 @@
     if(_regionPC == nil){
         KKRegionVC *VC = [[KKRegionVC alloc]init];
         self.regionPC = [[UIPopoverController alloc]initWithContentViewController:VC];
+        
         __weak typeof(self) viewController = self;
         VC.changeCityBlock = ^(){
             [viewController.regionPC dismissPopoverAnimated:YES];
@@ -96,16 +98,21 @@
     //logo
     UIBarButtonItem *logoBtn = [UIBarButtonItem itemWithImageName:@"icon_meituan_logo" highlightImageName:@"icon_meituan_logo" target:nil action:nil];
     
+    //category
     KKDealsTopMenu *category = [KKDealsTopMenu menu];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
     self.categoryMenu = category;
     [category addTarget:self method:@selector(categoryItemClick:)];
     
+    //region
     KKDealsTopMenu *region = [KKDealsTopMenu menu];
+    region.menuButton.image = @"icon_district";
+    region.menuButton.highlightedImage = @"icon_district_highlighted";
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc]initWithCustomView:region];
     self.regionMenu = region;
     [region addTarget:self method:@selector(regionItemClick:)];
     
+    //sort
     KKDealsTopMenu *sort = [KKDealsTopMenu menu];
     sort.titleLabel.text = @"排序";
     sort.subTitleLabel.text = @"默认";
@@ -155,11 +162,20 @@
 
 -(void)regionItemClick:(id)sender{
     
+    KKRegionVC *regionVC = (KKRegionVC*)self.regionPC.contentViewController;
+    regionVC.selectedRegion = self.selectedRegion;
+    regionVC.selectedSubRegion = self.selectedSubRegion;
     [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 #pragma mark - Handle Notification
 -(void)sortClicked:(NSNotification *)info{
     
+    //analysis info
+    KKSort *sort = info.userInfo[KKSelectedSort];
+    self.selectedSort = sort;
+    self.sortMenu.titleLabel.text = sort.label;
+    
+    //dismiss popover
     [self.sortPC dismissPopoverAnimated:YES];
 }
 
@@ -168,6 +184,7 @@
     //analysis info
     KKCity *city = info.userInfo[KKSelectedCity];
     self.regionMenu.titleLabel.text = city.name;
+    self.regionMenu.subTitleLabel.text = @"全部";
     self.selectedCity = city;
     
     //change region's source
@@ -181,10 +198,10 @@
     KKRegion *region = info.userInfo[KKSelectedRegion];
     NSString *subRegion = info.userInfo[KKSelectedSubRegion];
     
-    self.selectedSubCategory = subRegion;
+    self.selectedSubRegion = subRegion;
     self.selectedRegion = region;
     
-    self.regionMenu.titleLabel.text = region.name;
+    self.regionMenu.titleLabel.text = [NSString stringWithFormat:@"%@-%@",self.selectedCity.name,region.name];
     self.regionMenu.subTitleLabel.text = subRegion;
     
     //dismiss popover
@@ -193,6 +210,20 @@
 
 -(void)categoryClicked:(NSNotification *)info{
     
+    //analysis info
+    KKCategory *category = info.userInfo[KKSelectedCategory];
+    NSString *subCategory = info.userInfo[KKSelectedSubCategory];
+    
+    self.selectedCategory = category;
+    self.selectedSubCategory = subCategory;
+    
+    self.categoryMenu.titleLabel.text = category.name;
+    self.categoryMenu.subTitleLabel.text = subCategory;
+    self.categoryMenu.menuButton.image = category.small_icon;
+    self.categoryMenu.menuButton.highlightedImage = category.small_highlighted_icon;
+    
+    //dismiss popover
+
     [self.categoryPC dismissPopoverAnimated:YES];
 }
 

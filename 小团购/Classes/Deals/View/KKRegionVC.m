@@ -17,7 +17,7 @@
 @interface KKRegionVC ()
 
 @property(weak, nonatomic)KKDropDownMenu *menu;
-@property(strong, nonatomic)KKRegion *selectedRegion;
+
 @end
 
 @implementation KKRegionVC
@@ -65,7 +65,6 @@
 -(void)dropDownMenu:(KKDropDownMenu *)dpMenu mainRow:(NSInteger)row{
 
     KKRegion *region = self.regions[row];
-    self.selectedRegion = region;
     if(region.subregions.count == 0){
         
         //sent Notification
@@ -75,11 +74,27 @@
 
 -(void)dropDownMenu:(KKDropDownMenu *)dpMenu subRow:(NSInteger)subRow ofMain:(NSInteger)mainRow{
     
-    NSArray *subRegions = self.selectedRegion.subregions;
-    
+    KKRegion *region = self.regions[mainRow];
+    NSArray *subRegions = region.subregions;
     NSString *subRegion = subRegions[subRow];
-    
+
     //sent Notification
-    [KKNotificationCenter postNotificationName:KKRegionDidSelectNotification object:nil userInfo:@{KKSelectedRegion:self.selectedRegion,KKSelectedSubRegion:subRegion}];
+    [KKNotificationCenter postNotificationName:KKRegionDidSelectNotification object:nil userInfo:@{KKSelectedRegion:region,KKSelectedSubRegion:subRegion}];
 }
+
+-(void)setSelectedRegion:(KKRegion *)selectedRegion{
+    
+    _selectedRegion = selectedRegion;
+    NSInteger mainRow = [self.regions indexOfObject:selectedRegion];
+    [self.menu selectedMainRow:mainRow];
+}
+
+-(void)setSelectedSubRegion:(NSString *)selectedSubRegion{
+    
+    _selectedSubRegion = selectedSubRegion;
+    NSArray *subRegions = self.selectedRegion.subregions;
+    NSInteger subRow = [subRegions indexOfObject:selectedSubRegion];
+    [self.menu selectedSubRow:subRow];
+}
+
 @end

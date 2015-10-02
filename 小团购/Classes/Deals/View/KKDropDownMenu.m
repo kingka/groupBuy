@@ -11,6 +11,11 @@
 #import "KKDropDownMainCell.h"
 #import "KKDropDownSubCell.h"
 
+@interface KKDropDownMenu ()
+
+@property(assign, nonatomic)NSInteger mainRow;
+@end
+
 @implementation KKDropDownMenu
 
 +(instancetype)dropDownMenu{
@@ -81,6 +86,18 @@
     }
 }
 
+#pragma mark - Public Method
+-(void)selectedMainRow:(NSInteger)mainRow{
+    
+    //self.mainRow = mainRow;
+    [self.mainTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:mainRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self.subTableView reloadData];
+}
+
+-(void)selectedSubRow:(NSInteger)subRow{
+    
+    [self.subTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+}
 #pragma mark - 
 -(void)setItems:(NSArray *)items{
     

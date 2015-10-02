@@ -21,7 +21,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-vh-wLA" userLabel="imageBtn">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                     <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="icon_category_-1">
+                    <state key="normal" image="icon_category_0">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -68,6 +68,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_category_-1" width="30" height="30"/>
+        <image name="icon_category_0" width="30" height="30"/>
     </resources>
 </document>

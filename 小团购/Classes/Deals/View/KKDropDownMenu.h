@@ -31,4 +31,7 @@
 @property (nonatomic , strong) NSArray *items;
 @property (nonatomic , weak) id<KKDropDownMenuDelegate> delegate;
 +(instancetype)dropDownMenu;
+
+-(void)selectedMainRow:(NSInteger)mainRow;
+-(void)selectedSubRow:(NSInteger)subRow;
 @end
