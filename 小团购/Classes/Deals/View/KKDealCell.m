@@ -8,6 +8,7 @@
 
 #import "KKDealCell.h"
 #import "KKDeal.h"
+#import <UIImageView+WebCache.h>
 
 @implementation KKDealCell
 
@@ -15,7 +16,7 @@
 -(void)setDeal:(KKDeal *)deal{
     
     _deal = deal;
-    //self.imageView.image = [UIImage imageNamed:deal.i]
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"] options:SDWebImageRetryFailed];
     self.titleLabel.text = deal.title;
     self.descLabel.text = deal.desc;
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%.0f",deal.current_price];
