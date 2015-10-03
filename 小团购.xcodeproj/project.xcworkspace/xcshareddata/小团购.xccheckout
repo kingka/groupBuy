@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A64AEFFB-58BA-48EA-994A-F0B32E9086BA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>小团购</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CCCA106D8BF1B34C1D28C1E517B469DCC687F5F9</key>
 		<string>https://github.com/kingka/groupBuy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>小团购.xcodeproj/project.xcworkspace</string>
+	<string>小团购.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CCCA106D8BF1B34C1D28C1E517B469DCC687F5F9</key>
