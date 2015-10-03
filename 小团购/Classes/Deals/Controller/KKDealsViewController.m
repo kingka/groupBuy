@@ -19,19 +19,30 @@
 #import "KKFindDealParam.h"
 #import "KKDealTool.h"
 #import "MJExtension.h"
+#import "KKDealCell.h"
 
-@interface KKDealsViewController()
+@interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(strong, nonatomic)KKSort *selectedSort;
 @property(strong, nonatomic)KKCity *selectedCity;
 @property(strong, nonatomic)KKRegion *selectedRegion;
 @property(strong, nonatomic)NSString *selectedSubRegion;
 @property(strong, nonatomic)KKCategory *selectedCategory;
 @property(strong, nonatomic)NSString *selectedSubCategory;
+@property(strong, nonatomic)NSMutableArray *deals;
 @end
 
 @implementation KKDealsViewController
 
 #pragma mark - lazy loading
+
+-(NSMutableArray *)deals{
+    
+    if(_deals == nil){
+        
+        self.deals = [NSMutableArray array];
+    }
+    return _deals;
+}
 
 -(UIPopoverController *)categoryPC{
     
@@ -77,7 +88,22 @@
     
 }
 
+#pragma mark - CollectionDataSource
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    return self.deals.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
+    
+    cell.deal = self.deals[indexPath.row];
+    return cell;
+
+}
 #pragma mark - Private methods
 -(void)setupNotification{
     
@@ -278,6 +304,9 @@
     NSLog(@"%@",param.keyValues);
     [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
         NSLog(@"%@",result.keyValues);
+        [self.deals removeAllObjects];
+        [self.deals addObjectsFromArray:result.deals];
+        [self.collectionView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"网络有问题");
     }];
