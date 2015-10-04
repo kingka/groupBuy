@@ -70,6 +70,7 @@
 		F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */; };
 		F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */; };
 		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
+		F9EE58321BC157FC001B9729 /* LableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EE58311BC157FC001B9729 /* LableLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,8 @@
 		F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealTool.h; sourceTree = "<group>"; };
 		F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealTool.m; sourceTree = "<group>"; };
+		F9EE58301BC157FC001B9729 /* LableLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LableLine.h; sourceTree = "<group>"; };
+		F9EE58311BC157FC001B9729 /* LableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +372,8 @@
 				F989CDEA1BBABF02006589F7 /* KKDropDownSubCell.m */,
 				F90976C71BBEBFF10018B92E /* KKDealCell.h */,
 				F90976C81BBEBFF10018B92E /* KKDealCell.m */,
+				F9EE58301BC157FC001B9729 /* LableLine.h */,
+				F9EE58311BC157FC001B9729 /* LableLine.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -735,6 +740,7 @@
 				F92FE9271BB133EB00F28E60 /* KKCategory.m in Sources */,
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
 				F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */,
+				F9EE58321BC157FC001B9729 /* LableLine.m in Sources */,
 				F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */,
 				F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */,
 				F90976C91BBEBFF10018B92E /* KKDealCell.m in Sources */,
