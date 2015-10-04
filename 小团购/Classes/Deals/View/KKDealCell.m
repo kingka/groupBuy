@@ -22,5 +22,17 @@
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%.0f",deal.current_price];
     self.listPriceLabel.text = [NSString stringWithFormat:@"￥%.0f",deal.list_price];
     self.purchaseCountLabel.text = [NSString stringWithFormat:@"%i",deal.purchase_count];
+    
+    //set layout constraint by lable content
+    self.currentPriceLYWidth.constant = [_currentPriceLabel.text sizeWithAttributes:@{NSFontAttributeName:_currentPriceLabel.font}].width + 1;// 1 是为了误差
+    
+    self.listPriceLYWidth.constant = [_listPriceLabel.text sizeWithAttributes:@{NSFontAttributeName:_listPriceLabel.font}].width + 1;// 1 是为了误差
+    
+}
+
+-(void)drawRect:(CGRect)rect{
+    
+    [super drawRect:rect];
+    [[UIImage imageNamed:@"bg_dealcell"] drawInRect:rect];
 }
 @end

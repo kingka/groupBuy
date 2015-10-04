@@ -88,6 +88,34 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
+}
+
+#pragma mark - Rotation
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+
+#warning 这里传的是Height
+    [self setupLayout:self.view.height orientation:toInterfaceOrientation];
+    
+}
+
+-(void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation{
+    
+    NSInteger columCount = UIInterfaceOrientationIsLandscape(orientation) ? 3 : 2;
+   
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
+    CGFloat headSpace = 25;
+    CGFloat columSpace = (totalWidth - (flowLayout.itemSize.width * columCount))/(columCount+1) - 1;
+     NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
+    flowLayout.sectionInset = UIEdgeInsetsMake(headSpace, columSpace, headSpace, columSpace);
+    flowLayout.minimumLineSpacing = headSpace;
+    flowLayout.minimumInteritemSpacing = columSpace;
+        self.collectionViewLayout == self.collectionView.collectionViewLayout;
+    
+}
 #pragma mark - CollectionDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -300,7 +328,7 @@
         }
     }
     // 设置单次返回的数量
-    param.limit = @(2);
+    param.limit = @(12);
     NSLog(@"%@",param.keyValues);
     [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
         NSLog(@"%@",result.keyValues);

@@ -104,7 +104,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="y26-Ig-bEg" firstAttribute="leading" secondItem="z1e-Es-2GK" secondAttribute="leadingMargin" constant="5" id="K3G-De-7Ph"/>
                                     <constraint firstItem="yvt-bu-QRR" firstAttribute="leading" secondItem="z1e-Es-2GK" secondAttribute="leadingMargin" constant="10" id="R7Y-Fp-8cn"/>
@@ -116,9 +115,11 @@
                                 </constraints>
                                 <size key="customSize" width="305" height="305"/>
                                 <connections>
+                                    <outlet property="currentPriceLYWidth" destination="CYA-mA-Bmr" id="fKd-lO-h3X"/>
                                     <outlet property="currentPriceLabel" destination="kmX-EI-85g" id="riz-sN-mC0"/>
                                     <outlet property="descLabel" destination="J37-Uf-6UY" id="2EL-Dg-wfs"/>
                                     <outlet property="imageView" destination="y26-Ig-bEg" id="2Au-uC-oom"/>
+                                    <outlet property="listPriceLYWidth" destination="VTv-n1-DNT" id="zlJ-51-ITG"/>
                                     <outlet property="listPriceLabel" destination="qJe-l6-Hyc" id="GEq-H8-uV0"/>
                                     <outlet property="purchaseCountLabel" destination="php-ka-QYx" id="4es-e3-LsU"/>
                                     <outlet property="titleLabel" destination="p1K-Bs-FBq" id="wSc-V7-Zn4"/>
