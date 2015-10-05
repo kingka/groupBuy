@@ -20,6 +20,9 @@
 #import "KKDealTool.h"
 #import "MJExtension.h"
 #import "KKDealCell.h"
+#import "EmptyView.h"
+#import <MJRefresh.h>
+
 
 @interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(strong, nonatomic)KKSort *selectedSort;
@@ -29,11 +32,23 @@
 @property(strong, nonatomic)KKCategory *selectedCategory;
 @property(strong, nonatomic)NSString *selectedSubCategory;
 @property(strong, nonatomic)NSMutableArray *deals;
+@property(weak, nonatomic)EmptyView *emptyView;
+@property(strong, nonatomic)KKFindDealParam *lastFindDealParam;
 @end
 
 @implementation KKDealsViewController
 
 #pragma mark - lazy loading
+-(EmptyView *)emptyView{
+    
+    if (_emptyView == nil) {
+        EmptyView *emptyView = [EmptyView emptyView];
+        //emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
+        [self.view insertSubview:emptyView belowSubview:self.collectionView];
+        self.emptyView = emptyView;
+    }
+    return _emptyView;
+}
 
 -(NSMutableArray *)deals{
     
@@ -81,11 +96,19 @@
 #pragma mark - Lifecycle
 -(void)viewDidLoad{
     
+    [self setupBasicView];
+    [self setupRefresh];
     [self setupNotification];
     [self setupPath];
     [self setupLeftNav];
     [self setupRightNav];
     
+}
+
+-(void)setupBasicView{
+    
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -120,6 +143,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
+    self.emptyView.hidden = self.deals.count > 0;
     return self.deals.count;
 }
 
@@ -133,6 +157,13 @@
 
 }
 #pragma mark - Private methods
+-(void)setupRefresh{
+   // self.collectionView.footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreInfo)];
+    self.collectionView.footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreInfo)];
+    self.collectionView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
+    
+}
+
 -(void)setupNotification{
     
     KKAddObserver(sortClicked:, KKSortDidSelectNotification);
@@ -244,7 +275,7 @@
     //dismiss popover
     [self.sortPC dismissPopoverAnimated:YES];
     //call server
-    [self loadNewInfo];
+    [self.collectionView.header beginRefreshing];
 }
 
 -(void)cityClicked:(NSNotification *)info{
@@ -259,7 +290,7 @@
     KKRegionVC *regionVC = (KKRegionVC*)self.regionPC.contentViewController;
     regionVC.regions = city.regions;
     //call server
-    [self loadNewInfo];
+    [self.collectionView.header beginRefreshing];
 }
 
 -(void)regionClicked:(NSNotification *)info{
@@ -277,7 +308,7 @@
     //dismiss popover
     [self.regionPC dismissPopoverAnimated:YES];
     //call server
-    [self loadNewInfo];
+     [self.collectionView.header beginRefreshing];
 }
 
 -(void)categoryClicked:(NSNotification *)info{
@@ -299,10 +330,10 @@
     [self.categoryPC dismissPopoverAnimated:YES];
     
     //call server
-    [self loadNewInfo];
+     [self.collectionView.header beginRefreshing];
 }
 #pragma mark - sent post
--(void)loadNewInfo{
+-(KKFindDealParam*)buildParam{
     
     KKFindDealParam *param = [[KKFindDealParam alloc]init];
     param.city = self.selectedCity.name;
@@ -329,20 +360,51 @@
     }
     // 设置单次返回的数量
     param.limit = @(12);
-    NSLog(@"%@",param.keyValues);
+    
+    return param;
+    
+}
+-(void)loadNewInfo{
+    
+    KKFindDealParam *param = [self buildParam];
+    param.page = @(1);
     [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
-        NSLog(@"%@",result.keyValues);
+        //请求过期：直接返回
+        if(param != self.lastFindDealParam)return ;
+        
         [self.deals removeAllObjects];
         [self.deals addObjectsFromArray:result.deals];
         [self.collectionView reloadData];
+        [self.collectionView.header endRefreshing];
     } failure:^(NSError *error) {
         NSLog(@"网络有问题");
+        [self.collectionView.header endRefreshing];
     }];
     
+    self.lastFindDealParam = param;
 }
 
 -(void)loadMoreInfo{
 
+    KKFindDealParam *param = [self buildParam];
+    param.page = @(self.lastFindDealParam.page.intValue + 1);
+    [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
+        //请求过期：直接返回
+        if(param != self.lastFindDealParam)return ;
+        
+        [self.deals addObjectsFromArray:result.deals];
+        [self.collectionView reloadData];
+        //refresh
+        [self.collectionView.footer endRefreshing];
+        
+    } failure:^(NSError *error) {
+
+        param.page = @(param.page.intValue - 1);
+        //end refresh
+        [self.collectionView.footer endRefreshing];
+    }];
+    
+    self.lastFindDealParam = param;
 }
 #pragma mark - Path
 -(void)setupPath{
@@ -363,6 +425,7 @@
     //menu
     AwesomeMenu *menu = [[AwesomeMenu alloc]initWithFrame:CGRectZero startItem:startItem menuItems:items];
     menu.delegate = self;
+    menu.alpha = 0.15;
     [self.view addSubview:menu];
     CGFloat menuH = 200;
     
@@ -393,16 +456,21 @@
 }
 
 -(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu{
-    NSLog(@"close.");
+
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
     menu.highlightedContentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"];
+    [UIView animateWithDuration:0.5 animations:^{
+        menu.alpha = 0.15;
+    }];
 
 }
 
 -(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu{
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
     menu.highlightedContentImage = [UIImage imageNamed:@"icon_pathMenu_cross_highlighted"];
-    NSLog(@"open.");
+    [UIView animateWithDuration:0.5 animations:^{
+        menu.alpha = 1;
+    }];
     
     /*
     [UIView transitionWithView:menu duration:1.0 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
