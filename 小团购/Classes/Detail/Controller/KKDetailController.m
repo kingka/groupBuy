@@ -12,6 +12,7 @@
 #import "LableLine.h"
 #import "UIButton+Extension.h"
 #import "KKDealsConst.h"
+#import "UIView+AutoLayout.h"
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -41,7 +42,91 @@
 
 @implementation KKDetailController
 
+
+
+#pragma mark - lifecycle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupBasicView];
+    [self setupWebView];
+    [self updateLeftContent];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UIWebViewDelegate
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+
+
+    
+    NSMutableString *js = [NSMutableString string];
+    [js appendString:@"var buyBox = document.getElementsByClassName('buy-box')[0];"];
+    [js appendString:@"buyBox.remove();"];
+    [js appendString:@"var head = document.getElementsByTagName('head')[0];"];
+    [js appendString:@"var link = document.body.getElementsByTagName('link')[0];"];
+    [js appendString:@"var bodyHTML = '';"];
+    [js appendString:@"bodyHTML += link.outerHTML;"];
+    [js appendString:@"var headbar = document.getElementsByClassName('content group-info')[0];"];
+    [js appendString:@"bodyHTML += headbar.outerHTML;"];
+    [js appendString:@"var details = document.getElementsByClassName('group-detail');"];
+    [js appendString:@"for(var i = 0; i<=details.length;i++ ){"];
+    [js appendString:@"var detail = details[i];"];
+    [js appendString:@"if(detail){"];
+    [js appendString:@"bodyHTML += detail.outerHTML;"];
+    [js appendString:@"}"];
+    [js appendString:@"}"];
+    [js appendString:@"var buyKnow = document.getElementsByClassName('detail-info buy-know')[0];"];
+    [js appendString:@"bodyHTML += buyKnow.outerHTML;"];
+    [js appendString:@"document.body.innerHTML = bodyHTML;"];
+    [js appendString:@"document.head.innerHTML = head.innerHTML;"];
+        
+        // 执行JS代码
+    [webView stringByEvaluatingJavaScriptFromString:js];
+    
+    webView.scrollView.hidden = NO;
+    [self.loadingView stopAnimating];
+
+        // 移除圈圈
+    [self.loadingView removeFromSuperview];
+}
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+    NSLog(@"%@",request);
+    return YES;
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    
+    [self.loadingView stopAnimating];
+}
+
 #pragma mark - privateMethods
+
+-(void)setupWebView{
+    
+    //webView
+    self.webView.delegate = self;
+    self.webView.backgroundColor = myColor(230, 230, 230);
+    NSURL *url = [NSURL URLWithString:self.deal.deal_h5_url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+    self.webView.scrollView.hidden = YES;
+    
+    //indicatorView
+    UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.webView addSubview:loadingView];
+    [loadingView startAnimating];
+    self.loadingView = loadingView;
+    //layout
+    [loadingView autoCenterInSuperview];
+}
+
+
 /**
  *  更新左边的内容
  */
@@ -57,44 +142,16 @@
     self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
 }
 
-#pragma mark - lifecycle
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+-(void)setupBasicView{
+    
     self.view.backgroundColor = myColor(230, 230, 230);
-    [self setupWebView];
+    //self.webView.scrollView.hidden = YES;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)setupWebView{
-    self.webView.delegate = self;
-    NSURL *url = [NSURL URLWithString:self.deal.deal_h5_url];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
-}
-#pragma mark - UIWebViewDelegate
--(void)webViewDidFinishLoad:(UIWebView *)webView{
-
-
-}
-
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-
-    return YES;
-}
-
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    
-    
-}
-
-
 
 - (IBAction)back:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)buy:(id)sender {
