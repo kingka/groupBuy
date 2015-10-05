@@ -71,6 +71,7 @@
 		F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */; };
 		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
 		F9D09F871BC22A70006FDCDE /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F861BC22A70006FDCDE /* EmptyView.m */; };
+		F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */; };
 		F9EE58321BC157FC001B9729 /* LableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EE58311BC157FC001B9729 /* LableLine.m */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +209,8 @@
 		F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealTool.m; sourceTree = "<group>"; };
 		F9D09F851BC22A70006FDCDE /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		F9D09F861BC22A70006FDCDE /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		F9D09F8B1BC240EA006FDCDE /* MBProgressHUD+KK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KK.h"; sourceTree = "<group>"; };
+		F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KK.m"; sourceTree = "<group>"; };
 		F9EE58301BC157FC001B9729 /* LableLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LableLine.h; sourceTree = "<group>"; };
 		F9EE58311BC157FC001B9729 /* LableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,6 +491,8 @@
 				F9AC97401BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m */,
 				F93D7C721BB96E93001663E0 /* UIButton+Extension.h */,
 				F93D7C731BB96E93001663E0 /* UIButton+Extension.m */,
+				F9D09F8B1BC240EA006FDCDE /* MBProgressHUD+KK.h */,
+				F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -745,6 +750,7 @@
 				F92FE9271BB133EB00F28E60 /* KKCategory.m in Sources */,
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
 				F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */,
+				F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */,
 				F9EE58321BC157FC001B9729 /* LableLine.m in Sources */,
 				F9D09F871BC22A70006FDCDE /* EmptyView.m in Sources */,
 				F92FE91C1BB1336C00F28E60 /* KKFindDealResult.m in Sources */,

@@ -23,7 +23,8 @@
         }
         
     } failure:^(NSError *error) {
-        
+        if(failure)
+        failure(error);
     }];
 }
 

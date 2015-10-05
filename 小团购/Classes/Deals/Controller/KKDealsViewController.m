@@ -22,6 +22,7 @@
 #import "KKDealCell.h"
 #import "EmptyView.h"
 #import <MJRefresh.h>
+#import "MBProgressHUD+KK.h"
 
 
 @interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -34,6 +35,7 @@
 @property(strong, nonatomic)NSMutableArray *deals;
 @property(weak, nonatomic)EmptyView *emptyView;
 @property(strong, nonatomic)KKFindDealParam *lastFindDealParam;
+@property(assign, nonatomic)int totalNumber;
 @end
 
 @implementation KKDealsViewController
@@ -107,6 +109,7 @@
 
 -(void)setupBasicView{
     
+    self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor whiteColor];
 }
@@ -144,6 +147,8 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
     self.emptyView.hidden = self.deals.count > 0;
+    //control footer show or hide
+    self.collectionView.footer.hidden = (self.totalNumber == self.deals.count);
     return self.deals.count;
 }
 
@@ -372,12 +377,13 @@
         //请求过期：直接返回
         if(param != self.lastFindDealParam)return ;
         
+        self.totalNumber = result.total_count;
         [self.deals removeAllObjects];
         [self.deals addObjectsFromArray:result.deals];
         [self.collectionView reloadData];
         [self.collectionView.header endRefreshing];
     } failure:^(NSError *error) {
-        NSLog(@"网络有问题");
+        [MBProgressHUD showError:@"网络有错误"];
         [self.collectionView.header endRefreshing];
     }];
     
@@ -402,6 +408,8 @@
         param.page = @(param.page.intValue - 1);
         //end refresh
         [self.collectionView.footer endRefreshing];
+        
+        [MBProgressHUD showError:@"网络有错误"];
     }];
     
     self.lastFindDealParam = param;
