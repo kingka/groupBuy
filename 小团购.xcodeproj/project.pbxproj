@@ -72,6 +72,8 @@
 		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
 		F9D09F871BC22A70006FDCDE /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F861BC22A70006FDCDE /* EmptyView.m */; };
 		F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */; };
+		F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F921BC27A0F006FDCDE /* KKDetailController.m */; };
+		F9D09F951BC27A0F006FDCDE /* KKDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D09F931BC27A0F006FDCDE /* KKDetailController.xib */; };
 		F9EE58321BC157FC001B9729 /* LableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EE58311BC157FC001B9729 /* LableLine.m */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +213,9 @@
 		F9D09F861BC22A70006FDCDE /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		F9D09F8B1BC240EA006FDCDE /* MBProgressHUD+KK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KK.h"; sourceTree = "<group>"; };
 		F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KK.m"; sourceTree = "<group>"; };
+		F9D09F911BC27A0F006FDCDE /* KKDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDetailController.h; sourceTree = "<group>"; };
+		F9D09F921BC27A0F006FDCDE /* KKDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDetailController.m; sourceTree = "<group>"; };
+		F9D09F931BC27A0F006FDCDE /* KKDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKDetailController.xib; sourceTree = "<group>"; };
 		F9EE58301BC157FC001B9729 /* LableLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LableLine.h; sourceTree = "<group>"; };
 		F9EE58311BC157FC001B9729 /* LableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -449,6 +454,7 @@
 		F9B11B451BA90C1000ECF92C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F9D09F8E1BC279D0006FDCDE /* Detail */,
 				F98FBAE11BABA590001D501B /* Deals */,
 				F9B11B461BA90C1000ECF92C /* Main */,
 				F9B11B471BA90C1000ECF92C /* Other */,
@@ -573,6 +579,32 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		F9D09F8E1BC279D0006FDCDE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F9D09F8F1BC279D0006FDCDE /* Controller */,
+				F9D09F901BC279D0006FDCDE /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F9D09F8F1BC279D0006FDCDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9D09F911BC27A0F006FDCDE /* KKDetailController.h */,
+				F9D09F921BC27A0F006FDCDE /* KKDetailController.m */,
+				F9D09F931BC27A0F006FDCDE /* KKDetailController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9D09F901BC279D0006FDCDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -666,6 +698,7 @@
 				F9B11AEA1BA909BB00ECF92C /* Images.xcassets in Resources */,
 				F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */,
 				F98721A31BBBB732005BFE34 /* KKCitiesController.xib in Resources */,
+				F9D09F951BC27A0F006FDCDE /* KKDetailController.xib in Resources */,
 				F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,6 +794,7 @@
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F93D7C741BB96E93001663E0 /* UIButton+Extension.m in Sources */,
+				F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,
 				F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */,
 				F92FE91A1BB1336C00F28E60 /* KKDeal.m in Sources */,

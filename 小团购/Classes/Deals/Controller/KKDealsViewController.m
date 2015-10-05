@@ -23,6 +23,7 @@
 #import "EmptyView.h"
 #import <MJRefresh.h>
 #import "MBProgressHUD+KK.h"
+#import "KKDetailController.h"
 
 
 @interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -96,6 +97,11 @@
 }
 
 #pragma mark - Lifecycle
+-(void)dealloc{
+    
+    [KKNotificationCenter removeObserver:self];
+    
+}
 -(void)viewDidLoad{
     
     [self setupBasicView];
@@ -111,7 +117,7 @@
     
     self.collectionView.alwaysBounceVertical = YES;
     self.collectionView.backgroundColor = [UIColor clearColor];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = myColor(230, 230, 230);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -135,11 +141,19 @@
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
     CGFloat headSpace = 25;
     CGFloat columSpace = (totalWidth - (flowLayout.itemSize.width * columCount))/(columCount+1) - 1;
-     NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
+     //NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
     flowLayout.sectionInset = UIEdgeInsetsMake(headSpace, columSpace, headSpace, columSpace);
     flowLayout.minimumLineSpacing = headSpace;
     flowLayout.minimumInteritemSpacing = columSpace;
-        self.collectionViewLayout == self.collectionView.collectionViewLayout;
+        //self.collectionViewLayout == self.collectionView.collectionViewLayout;
+    
+}
+#pragma mark -UICollectionViewDelegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KKDetailController *detailVC = [[KKDetailController alloc]init];
+    detailVC.deal = self.deals[indexPath.row];
+    [self presentViewController:detailVC animated:YES completion:nil];
     
 }
 #pragma mark - CollectionDataSource

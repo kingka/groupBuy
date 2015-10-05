@@ -27,4 +27,9 @@
 #define KKNotificationCenter [NSNotificationCenter defaultCenter]
 
 #define KKAddObserver(methodName,notificationName) [KKNotificationCenter addObserver:self selector:@selector(methodName) name:notificationName object:nil];
+
+#define KKColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define KKGlobalBg HMColor(230, 230, 230)
+
+#define myColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #endif

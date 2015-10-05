@@ -19,8 +19,8 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"] options:SDWebImageRetryFailed];
     self.titleLabel.text = deal.title;
     self.descLabel.text = deal.desc;
-    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%.0f",deal.current_price];
-    self.listPriceLabel.text = [NSString stringWithFormat:@"￥%.0f",deal.list_price];
+    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@",deal.current_price];
+    self.listPriceLabel.text = [NSString stringWithFormat:@"￥%@",deal.list_price];
     self.purchaseCountLabel.text = [NSString stringWithFormat:@"%i",deal.purchase_count];
     
     //set layout constraint by lable content

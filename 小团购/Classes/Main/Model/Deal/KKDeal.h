@@ -20,9 +20,9 @@
 @property (copy, nonatomic) NSString *city;
 
 /** 团购包含商品原价值 */
-@property (assign, nonatomic) float list_price;
+@property (strong, nonatomic) NSNumber* list_price;
 /** 团购价格 */
-@property (assign, nonatomic) float current_price;
+@property (strong, nonatomic) NSNumber* current_price;
 
 /**  团购适用商户所在行政区 NSString */
 @property (strong, nonatomic) NSArray *regions;
