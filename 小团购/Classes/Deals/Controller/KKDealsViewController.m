@@ -24,6 +24,7 @@
 #import <MJRefresh.h>
 #import "MBProgressHUD+KK.h"
 #import "KKDetailController.h"
+#import "KKMetaDataTool.h"
 
 
 @interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -310,6 +311,8 @@
     regionVC.regions = city.regions;
     //call server
     [self.collectionView.header beginRefreshing];
+    
+    [[KKMetaDataTool sharedMetaDataTool] saveSelectedCityNames:city.name];
 }
 
 -(void)regionClicked:(NSNotification *)info{

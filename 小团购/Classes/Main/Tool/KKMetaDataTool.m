@@ -13,6 +13,7 @@
 #import "KKRegion.h"
 #import "KKSort.h"
 #import "MJExtension.h"
+#import "KKDealsConst.h"
 
 @interface KKMetaDataTool (){
     
@@ -26,10 +27,21 @@
     NSArray *_sorts;
 }
 
+@property(strong, nonatomic)NSMutableArray *selectedCityNames;
 @end
 
 @implementation KKMetaDataTool
 KKSingletonM(MetaDataTool);
+
+-(NSMutableArray *)selectedCityNames{
+    
+    if(_selectedCityNames == nil){
+        
+        self.selectedCityNames = [NSMutableArray array];
+        
+    }
+    return _selectedCityNames;
+}
 
 -(NSArray *)categories{
     
@@ -44,10 +56,21 @@ KKSingletonM(MetaDataTool);
 
 - (NSArray *)cityGroups
 {
-    if (!_cityGroups) {
-        _cityGroups = [KKCityGroup objectArrayWithFilename:@"cityGroups.plist"];
+    NSMutableArray *cityGroups = [NSMutableArray array];
+    //
+    if(self.selectedCityNames.count){
+    
+        KKCityGroup *lastSelectedGroup = [[KKCityGroup alloc]init];
+        lastSelectedGroup.title = @"最近";
+        lastSelectedGroup.cities = self.selectedCityNames;
+        [cityGroups addObject:lastSelectedGroup];
     }
-    return _cityGroups;
+   
+    //plist
+    NSArray *plistCityGroups = [KKCityGroup objectArrayWithFilename:@"cityGroups.plist"];
+    [cityGroups addObjectsFromArray:plistCityGroups];
+
+    return cityGroups;
 }
 
 - (NSArray *)cities
@@ -76,6 +99,15 @@ KKSingletonM(MetaDataTool);
         }
     }
     return nil;
+}
+
+-(void)saveSelectedCityNames:(NSString *)cityName{
+    
+    [self.selectedCityNames removeObject:cityName];
+    [self.selectedCityNames insertObject:cityName atIndex:0];
+    
+    [self.selectedCityNames writeToFile:KKSelectedCityNamesFile atomically:YES];
+
 }
 
 @end

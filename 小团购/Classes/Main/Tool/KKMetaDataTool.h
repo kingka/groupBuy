@@ -31,4 +31,6 @@ KKSingletonH(MetaDataTool)
 @property (strong, nonatomic, readonly) NSArray *sorts;
 
 -(KKCity*)cityWithName:(NSString *)name;
+
+-(void)saveSelectedCityNames:(NSString*)cityName;
 @end
