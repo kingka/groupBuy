@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class KKRestriction;
 @interface KKDeal : NSObject
 /** 团购单ID */
 @property (copy, nonatomic) NSString *deal_id;
@@ -57,4 +58,7 @@
 @property (copy, nonatomic) NSString *details;
 /** 重要通知(一般为团购信息的临时变更) */
 @property (copy, nonatomic) NSString *notice;
+
+/** 限制条件 */
+@property (nonatomic, strong) KKRestriction *restrictions;
 @end

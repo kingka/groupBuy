@@ -74,6 +74,7 @@
 		F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */; };
 		F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F921BC27A0F006FDCDE /* KKDetailController.m */; };
 		F9D09F951BC27A0F006FDCDE /* KKDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D09F931BC27A0F006FDCDE /* KKDetailController.xib */; };
+		F9D09F981BC3AD93006FDCDE /* KKRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F971BC3AD93006FDCDE /* KKRestriction.m */; };
 		F9EE58321BC157FC001B9729 /* LableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EE58311BC157FC001B9729 /* LableLine.m */; };
 /* End PBXBuildFile section */
 
@@ -216,6 +217,8 @@
 		F9D09F911BC27A0F006FDCDE /* KKDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDetailController.h; sourceTree = "<group>"; };
 		F9D09F921BC27A0F006FDCDE /* KKDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDetailController.m; sourceTree = "<group>"; };
 		F9D09F931BC27A0F006FDCDE /* KKDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKDetailController.xib; sourceTree = "<group>"; };
+		F9D09F961BC3AD93006FDCDE /* KKRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRestriction.h; sourceTree = "<group>"; };
+		F9D09F971BC3AD93006FDCDE /* KKRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRestriction.m; sourceTree = "<group>"; };
 		F9EE58301BC157FC001B9729 /* LableLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LableLine.h; sourceTree = "<group>"; };
 		F9EE58311BC157FC001B9729 /* LableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +266,8 @@
 				F92FE90B1BB1336C00F28E60 /* KKBusiness.m */,
 				F92FE90C1BB1336C00F28E60 /* KKDeal.h */,
 				F92FE90D1BB1336C00F28E60 /* KKDeal.m */,
+				F9D09F961BC3AD93006FDCDE /* KKRestriction.h */,
+				F9D09F971BC3AD93006FDCDE /* KKRestriction.m */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -777,6 +782,7 @@
 				F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */,
 				F9B11B511BA90C1000ECF92C /* DPRequest.m in Sources */,
 				F9B11B731BA9594300ECF92C /* MJProperty.m in Sources */,
+				F9D09F981BC3AD93006FDCDE /* KKRestriction.m in Sources */,
 				F9B11B721BA9594300ECF92C /* MJFoundation.m in Sources */,
 				F92FE92D1BB1340100F28E60 /* KKCity.m in Sources */,
 				F989CDEB1BBABF02006589F7 /* KKDropDownSubCell.m in Sources */,
