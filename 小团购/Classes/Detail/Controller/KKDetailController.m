@@ -16,6 +16,7 @@
 #import "KKRestriction.h"
 #import "KKDealTool.h"
 #import "KKGetSingleDealParam.h"
+#import <UIImageView+WebCache.h>
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -40,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *purchaseCountButton;
 
 @property (nonatomic, weak) UIActivityIndicatorView *loadingView;
+@property (weak, nonatomic) IBOutlet UIImageView *dealImageView;
 
 @end
 
@@ -61,7 +63,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(NSUInteger)supportedInterfaceOrientations{
+    
+    return UIInterfaceOrientationMaskLandscape;
+}
 #pragma mark - UIWebViewDelegate
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
 
@@ -119,7 +124,7 @@
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@", self.deal.current_price];
     self.originLabel.text = [NSString stringWithFormat:@"门店价￥%@", self.deal.list_price];
     self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
-
+    [self.dealImageView sd_setImageWithURL:[NSURL URLWithString:self.deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"] options:SDWebImageRetryFailed];
     //getMoreInfo
     KKGetSingleDealParam *param = [[KKGetSingleDealParam alloc]init];
     param.deal_id = self.deal.deal_id;
