@@ -13,6 +13,9 @@
 #import "UIButton+Extension.h"
 #import "KKDealsConst.h"
 #import "UIView+AutoLayout.h"
+#import "KKRestriction.h"
+#import "KKDealTool.h"
+#import "KKGetSingleDealParam.h"
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -49,6 +52,7 @@
     [super viewDidLoad];
     [self setupBasicView];
     [self setupWebView];
+    [self setupLeftContent];
     [self updateLeftContent];
 }
 
@@ -107,6 +111,34 @@
 
 #pragma mark - privateMethods
 
+-(void)setupLeftContent{
+    
+    // 简单信息
+    self.titleLabel.text = self.deal.title;
+    self.descLabel.text = self.deal.desc;
+    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@", self.deal.current_price];
+    self.originLabel.text = [NSString stringWithFormat:@"门店价￥%@", self.deal.list_price];
+    self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
+
+    //getMoreInfo
+    KKGetSingleDealParam *param = [[KKGetSingleDealParam alloc]init];
+    param.deal_id = self.deal.deal_id;
+    [KKDealTool getSingleDeals:param success:^(KKGetSingleDealResult *result) {
+        if(result.deals.count){
+        
+            self.deal = [result.deals lastObject];
+            [self updateLeftContent];
+        }else{
+            
+            [MBProgressHUD showError:@"找不到指定数据"];
+        }
+     
+    } failure:^(NSError *error) {
+        
+        [MBProgressHUD showError:@"加载失败"];
+    }];
+}
+
 -(void)setupWebView{
     
     //webView
@@ -137,8 +169,8 @@
     self.descLabel.text = self.deal.desc;
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@", self.deal.current_price];
     self.originLabel.text = [NSString stringWithFormat:@"门店价￥%@", self.deal.list_price];
-    //self.refundableAnyTimeButton.selected = self.deal.restrictions.is_refundable;
-    //self.refundableExpiresButton.selected = self.deal.restrictions.is_refundable;
+    self.refundableAnyTimeButton.selected = self.deal.restrictions.is_refundable;
+    self.refundableExpiresButton.selected = self.deal.restrictions.is_refundable;
     self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
 }
 
