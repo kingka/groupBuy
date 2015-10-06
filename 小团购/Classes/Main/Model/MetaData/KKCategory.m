@@ -7,8 +7,10 @@
 //
 
 #import "KKCategory.h"
+#import "MJExtension.h"
 
 @implementation KKCategory
+MJCodingImplementation
 
 -(NSString *)iconName{
     
@@ -28,4 +30,5 @@
     
     return _small_highlighted_icon;
 }
+
 @end

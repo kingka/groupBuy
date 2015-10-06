@@ -11,6 +11,7 @@
 #import "MJExtension.h"
 
 @implementation KKDeal
+MJCodingImplementation
 
 +(NSDictionary *)objectClassInArray{
     return @{@"businesses" : [KKBusiness class]};

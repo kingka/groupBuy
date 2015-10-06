@@ -7,7 +7,9 @@
 //
 
 #import "KKSort.h"
+#import "MJExtension.h"
 
 @implementation KKSort
 
+MJCodingImplementation
 @end

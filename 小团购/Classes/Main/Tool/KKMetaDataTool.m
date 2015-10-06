@@ -21,8 +21,6 @@
     NSArray *_categories;
     /** 所有的城市 */
     NSArray *_cities;
-    /** 所有的城市组 */
-    NSArray *_cityGroups;
     /** 所有的排序 */
     NSArray *_sorts;
 }
@@ -33,12 +31,14 @@
 @implementation KKMetaDataTool
 KKSingletonM(MetaDataTool);
 
--(NSMutableArray *)selectedCityNames{
-    
-    if(_selectedCityNames == nil){
-        
-        self.selectedCityNames = [NSMutableArray array];
-        
+- (NSMutableArray *)selectedCityNames
+{
+    if (!_selectedCityNames) {
+        _selectedCityNames = [NSMutableArray arrayWithContentsOfFile:KKSelectedCityNamesFile];
+        NSLog(@"cityNames:%@",_selectedCityNames);
+        if (!_selectedCityNames) {
+            _selectedCityNames = [NSMutableArray array];
+        }
     }
     return _selectedCityNames;
 }
@@ -108,6 +108,46 @@ KKSingletonM(MetaDataTool);
     
     [self.selectedCityNames writeToFile:KKSelectedCityNamesFile atomically:YES];
 
+}
+
+-(void)saveSelectedSort:(KKSort *)sort{
+    
+    if (sort == nil) return;
+    [NSKeyedArchiver  archiveRootObject:sort toFile:KKSelectedSortsFile];
+}
+
+-(void)saveSelectedRegion:(KKRegion *)region{
+
+    if (region == nil) return;
+    [NSKeyedArchiver  archiveRootObject:region toFile:KKSelectedRegionsFile];
+}
+
+-(void)saveSelectedCategory:(KKCategory *)category{
+
+    if (category == nil) return;
+    [NSKeyedArchiver  archiveRootObject:category toFile:KKSelectedCategoriesFile];
+}
+
+-(KKCity *)selectedCity{
+    
+    NSString *cityName = [self.selectedCityNames firstObject];
+    KKCity *city = [self cityWithName:cityName];
+    if(city == nil){
+        
+        city = [self cityWithName:@"深圳"];
+    }
+    return city;
+}
+
+-(KKSort *)selectedSort{
+    
+    KKSort *sort = [NSKeyedUnarchiver unarchiveObjectWithFile:KKSelectedSortsFile];
+    if (sort == nil) {
+        //if no then set default value
+        sort = [self.sorts firstObject];
+    }
+    
+    return sort;
 }
 
 @end

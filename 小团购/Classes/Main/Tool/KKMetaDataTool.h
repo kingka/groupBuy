@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "KKSingleton.h"
 #import "KKCity.h"
-
+@class KKSort;
+@class KKRegion;
+@class KKCategory;
 @interface KKMetaDataTool : NSObject
 KKSingletonH(MetaDataTool)
 
@@ -33,4 +35,12 @@ KKSingletonH(MetaDataTool)
 -(KKCity*)cityWithName:(NSString *)name;
 
 -(void)saveSelectedCityNames:(NSString*)cityName;
+-(void)saveSelectedSort:(KKSort*)sort;
+-(void)saveSelectedRegion:(KKRegion*)region;
+-(void)saveSelectedCategory:(KKCategory*)category;
+
+-(KKSort *)selectedSort;
+-(KKRegion *)selectedRegion;
+-(KKCategory *)selectedCategory;
+-(KKCity *)selectedCity;
 @end

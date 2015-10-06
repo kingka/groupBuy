@@ -7,7 +7,7 @@
 //
 
 #import "KKRestriction.h"
-
+#import "MJExtension.h"
 @implementation KKRestriction
-
+MJCodingImplementation
 @end

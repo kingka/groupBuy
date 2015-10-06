@@ -105,12 +105,23 @@
 }
 -(void)viewDidLoad{
     
+    KKCity *selectedCity = [[KKMetaDataTool sharedMetaDataTool] selectedCity];
+    self.selectedCity = selectedCity;
+    
+    self.selectedSort = [[KKMetaDataTool sharedMetaDataTool] selectedSort];
+    //self.selectedSort = selectedSort;
+
+    KKRegionVC *regionVC = (KKRegionVC *)self.regionPC.contentViewController;
+    regionVC.regions = self.selectedCity.regions;
+    
     [self setupBasicView];
     [self setupRefresh];
     [self setupNotification];
     [self setupPath];
     [self setupLeftNav];
     [self setupRightNav];
+    
+    [self.collectionView.header beginRefreshing];
     
 }
 
@@ -209,11 +220,14 @@
     //category
     KKDealsTopMenu *category = [KKDealsTopMenu menu];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc]initWithCustomView:category];
+    category.menuButton.image = @"icon_category";
+    category.menuButton.highlightedImage = @"icon_category_highlighted";
     self.categoryMenu = category;
     [category addTarget:self method:@selector(categoryItemClick:)];
     
     //region
     KKDealsTopMenu *region = [KKDealsTopMenu menu];
+    region.titleLabel.text = [NSString stringWithFormat:@"%@ - 全部",self.selectedCity.name];
     region.menuButton.image = @"icon_district";
     region.menuButton.highlightedImage = @"icon_district_highlighted";
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc]initWithCustomView:region];
@@ -223,7 +237,7 @@
     //sort
     KKDealsTopMenu *sort = [KKDealsTopMenu menu];
     sort.titleLabel.text = @"排序";
-    sort.subTitleLabel.text = @"默认";
+    sort.subTitleLabel.text = self.selectedSort.label;
     sort.menuButton.image = @"icon_sort";
     sort.menuButton.highlightedImage = @"icon_sort_highlighted";
     [sort addTarget:self method:@selector(sortItemClick:)];
@@ -289,13 +303,16 @@
     //analysis info
     KKSort *sort = info.userInfo[KKSelectedSort];
     self.selectedSort = sort;
-    self.sortMenu.titleLabel.text = sort.label;
+    self.sortMenu.subTitleLabel.text = sort.label;
     
    
     //dismiss popover
     [self.sortPC dismissPopoverAnimated:YES];
     //call server
     [self.collectionView.header beginRefreshing];
+    
+    //save
+    [[KKMetaDataTool sharedMetaDataTool] saveSelectedSort:sort];
 }
 
 -(void)cityClicked:(NSNotification *)info{

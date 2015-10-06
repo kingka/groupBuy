@@ -7,8 +7,10 @@
 //
 
 #import "KKRegion.h"
+#import "MJExtension.h"
 
 @implementation KKRegion
+MJCodingImplementation
 
 -(NSString *)title{
     
