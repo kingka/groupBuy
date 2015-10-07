@@ -17,6 +17,7 @@
 #import "KKDealTool.h"
 #import "KKGetSingleDealParam.h"
 #import <UIImageView+WebCache.h>
+#import <UMSocial.h>
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -42,6 +43,8 @@
 
 @property (nonatomic, weak) UIActivityIndicatorView *loadingView;
 @property (weak, nonatomic) IBOutlet UIImageView *dealImageView;
+
+
 
 @end
 
@@ -197,5 +200,14 @@
 }
 
 - (IBAction)share:(id)sender {
+    //注意：分享到微信好友、微信朋友圈、微信收藏、QQ空间、QQ好友、来往好友、来往朋友圈、易信好友、易信朋友圈、Facebook、Twitter、Instagram等平台需要参考各自的集成方法
+    //如果需要分享回调，请将delegate对象设置self，并实现下面的回调方法
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5615231ae0f55acbc7003114"
+                                      shareText:self.deal.title
+                                     shareImage:self.dealImageView.image
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,nil]
+                                       delegate:nil];
 }
+
 @end
