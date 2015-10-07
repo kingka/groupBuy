@@ -138,58 +138,9 @@
     [self setupLayout:self.view.width orientation:self.interfaceOrientation];
 }
 
-#pragma mark - Rotation
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-
-#warning 这里传的是Height
-    [self setupLayout:self.view.height orientation:toInterfaceOrientation];
-    
-}
-
--(void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation{
-    
-    NSInteger columCount = UIInterfaceOrientationIsLandscape(orientation) ? 3 : 2;
-   
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
-    CGFloat headSpace = 25;
-    CGFloat columSpace = (totalWidth - (flowLayout.itemSize.width * columCount))/(columCount+1) - 1;
-     //NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
-    flowLayout.sectionInset = UIEdgeInsetsMake(headSpace, columSpace, headSpace, columSpace);
-    flowLayout.minimumLineSpacing = headSpace;
-    flowLayout.minimumInteritemSpacing = columSpace;
-        //self.collectionViewLayout == self.collectionView.collectionViewLayout;
-    
-}
-#pragma mark -UICollectionViewDelegate
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    KKDetailController *detailVC = [[KKDetailController alloc]init];
-    detailVC.deal = self.deals[indexPath.row];
-    [self presentViewController:detailVC animated:YES completion:nil];
-    
-}
-#pragma mark - CollectionDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-
-    self.emptyView.hidden = self.deals.count > 0;
-    //control footer show or hide
-    self.collectionView.footer.hidden = (self.totalNumber == self.deals.count);
-    return self.deals.count;
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    KKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
-    
-    cell.deal = self.deals[indexPath.row];
-    return cell;
-
-}
 #pragma mark - Private methods
 -(void)setupRefresh{
-   // self.collectionView.footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreInfo)];
+    // self.collectionView.footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreInfo)];
     self.collectionView.footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreInfo)];
     self.collectionView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewInfo)];
     
@@ -246,11 +197,11 @@
     
     
     self.navigationItem.leftBarButtonItems = @[logoBtn,categoryItem,regionItem,sortItem];
-
+    
 }
 
 -(void)setupRightNav{
-
+    
     //map
     UIBarButtonItem *mapBtn = [UIBarButtonItem itemWithImageName:@"icon_map" highlightImageName:@"icon_map_hightlighted" target:self action:@selector(mapBtnClick)];
     mapBtn.customView.width = 70;
@@ -264,7 +215,7 @@
 }
 
 -(void)mapBtnClick{
-
+    
 }
 
 -(void)searchBtnClick{
@@ -286,7 +237,7 @@
     sortVC.selectedSort = self.selectedSort;
     
     [self.sortPC presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-
+    
 }
 
 -(void)regionItemClick:(id)sender{
@@ -296,6 +247,56 @@
     regionVC.selectedSubRegion = self.selectedSubRegion;
     
     [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+#pragma mark - Rotation
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+
+#warning 这里传的是Height
+    [self setupLayout:self.view.height orientation:toInterfaceOrientation];
+    
+}
+
+-(void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation{
+    
+    NSInteger columCount = UIInterfaceOrientationIsLandscape(orientation) ? 3 : 2;
+   
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
+    CGFloat headSpace = 25;
+    CGFloat columSpace = (totalWidth - (flowLayout.itemSize.width * columCount))/(columCount+1) - 1;
+     //NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
+    flowLayout.sectionInset = UIEdgeInsetsMake(headSpace, columSpace, headSpace, columSpace);
+    flowLayout.minimumLineSpacing = headSpace;
+    flowLayout.minimumInteritemSpacing = columSpace;
+        //self.collectionViewLayout == self.collectionView.collectionViewLayout;
+    
+}
+#pragma mark -UICollectionViewDelegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KKDetailController *detailVC = [[KKDetailController alloc]init];
+    detailVC.deal = self.deals[indexPath.row];
+    [self presentViewController:detailVC animated:YES completion:nil];
+    
+}
+#pragma mark - CollectionDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    self.emptyView.hidden = self.deals.count > 0;
+    //control footer show or hide
+    self.collectionView.footer.hidden = (self.totalNumber == self.deals.count);
+    return self.deals.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
+    
+    cell.deal = self.deals[indexPath.row];
+    return cell;
+
 }
 #pragma mark - Handle Notification
 -(void)sortClicked:(NSNotification *)info{

@@ -14,3 +14,6 @@ pod 'MBProgressHUD'
 
 # https://github.com/CoderMJLee/MJRefresh
 pod 'MJRefresh'
+
+#http://dev.umeng.com/social/ios/quick-integration
+pod 'UMengSocial', '~> 4.2.3'
