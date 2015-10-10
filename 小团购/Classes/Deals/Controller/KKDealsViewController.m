@@ -19,24 +19,20 @@
 #import "KKFindDealParam.h"
 #import "KKDealTool.h"
 #import "MJExtension.h"
-#import "KKDealCell.h"
-#import "EmptyView.h"
 #import <MJRefresh.h>
 #import "MBProgressHUD+KK.h"
-#import "KKDetailController.h"
 #import "KKMetaDataTool.h"
 #import "KKHistoryController.h"
 
-
-@interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface KKDealsViewController()
 @property(strong, nonatomic)KKSort *selectedSort;
 @property(strong, nonatomic)KKCity *selectedCity;
 @property(strong, nonatomic)KKRegion *selectedRegion;
 @property(strong, nonatomic)NSString *selectedSubRegion;
 @property(strong, nonatomic)KKCategory *selectedCategory;
 @property(strong, nonatomic)NSString *selectedSubCategory;
-@property(strong, nonatomic)NSMutableArray *deals;
-@property(weak, nonatomic)EmptyView *emptyView;
+
+
 @property(strong, nonatomic)KKFindDealParam *lastFindDealParam;
 @property(assign, nonatomic)int totalNumber;
 @end
@@ -44,25 +40,7 @@
 @implementation KKDealsViewController
 
 #pragma mark - lazy loading
--(EmptyView *)emptyView{
-    
-    if (_emptyView == nil) {
-        EmptyView *emptyView = [EmptyView emptyView];
-        //emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
-        [self.view insertSubview:emptyView belowSubview:self.collectionView];
-        self.emptyView = emptyView;
-    }
-    return _emptyView;
-}
 
--(NSMutableArray *)deals{
-    
-    if(_deals == nil){
-        
-        self.deals = [NSMutableArray array];
-    }
-    return _deals;
-}
 
 -(UIPopoverController *)categoryPC{
     
@@ -106,6 +84,7 @@
 }
 -(void)viewDidLoad{
     
+    [super viewDidLoad];
     KKCity *selectedCity = [[KKMetaDataTool sharedMetaDataTool] selectedCity];
     self.selectedCity = selectedCity;
     
@@ -115,7 +94,6 @@
     KKRegionVC *regionVC = (KKRegionVC *)self.regionPC.contentViewController;
     regionVC.regions = self.selectedCity.regions;
     
-    [self setupBasicView];
     [self setupRefresh];
     [self setupNotification];
     [self setupPath];
@@ -126,17 +104,13 @@
     
 }
 
--(void)setupBasicView{
-    
-    self.collectionView.alwaysBounceVertical = YES;
-    self.collectionView.backgroundColor = [UIColor clearColor];
-    self.view.backgroundColor = myColor(230, 230, 230);
-}
+#pragma mark - CollectionDataSource
 
--(void)viewDidAppear:(BOOL)animated{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    //control footer show or hide
+    self.collectionView.footer.hidden = (self.totalNumber == self.deals.count);
     
-    [super viewDidAppear:animated];
-    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
+    return [super collectionView:collectionView numberOfItemsInSection:section];
 }
 
 #pragma mark - Private methods
@@ -250,55 +224,7 @@
     [self.regionPC presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-#pragma mark - Rotation
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
 
-#warning 这里传的是Height
-    [self setupLayout:self.view.height orientation:toInterfaceOrientation];
-    
-}
-
--(void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation{
-    
-    NSInteger columCount = UIInterfaceOrientationIsLandscape(orientation) ? 3 : 2;
-   
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionViewLayout;
-    CGFloat headSpace = 25;
-    CGFloat columSpace = (totalWidth - (flowLayout.itemSize.width * columCount))/(columCount+1) - 1;
-     //NSLog(@"w:%f,C:%d,S:%f",totalWidth,columCount,columSpace);
-    flowLayout.sectionInset = UIEdgeInsetsMake(headSpace, columSpace, headSpace, columSpace);
-    flowLayout.minimumLineSpacing = headSpace;
-    flowLayout.minimumInteritemSpacing = columSpace;
-        //self.collectionViewLayout == self.collectionView.collectionViewLayout;
-    
-}
-#pragma mark -UICollectionViewDelegate
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    KKDetailController *detailVC = [[KKDetailController alloc]init];
-    detailVC.deal = self.deals[indexPath.row];
-    [self presentViewController:detailVC animated:YES completion:nil];
-    
-}
-#pragma mark - CollectionDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-
-    self.emptyView.hidden = self.deals.count > 0;
-    //control footer show or hide
-    self.collectionView.footer.hidden = (self.totalNumber == self.deals.count);
-    return self.deals.count;
-}
-
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    KKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
-    
-    cell.deal = self.deals[indexPath.row];
-    return cell;
-
-}
 #pragma mark - Handle Notification
 -(void)sortClicked:(NSNotification *)info{
     

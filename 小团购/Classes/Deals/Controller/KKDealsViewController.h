@@ -12,8 +12,9 @@
 #import "UIView+AutoLayout.h"
 #import "UIView+Extension.h"
 #import "KKDealsTopMenu.h"
+#import "KKDealListViewController.h"
 
-@interface KKDealsViewController : UICollectionViewController<AwesomeMenuDelegate>
+@interface KKDealsViewController : KKDealListViewController<AwesomeMenuDelegate>
 
 @property (nonatomic , weak) KKDealsTopMenu *categoryMenu;
 @property (nonatomic , weak) KKDealsTopMenu *sortMenu;

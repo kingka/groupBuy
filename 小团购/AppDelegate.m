@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <UMSocial.h>
+#import "KKDealsViewController.h"
+#import "KKNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    KKDealsViewController *dealsVC = [[KKDealsViewController alloc]init];
+    KKNavigationController *nav = [[KKNavigationController alloc]initWithRootViewController:dealsVC];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     [UMSocialData setAppKey:@"5615231ae0f55acbc7003114"];
     return YES;
 }

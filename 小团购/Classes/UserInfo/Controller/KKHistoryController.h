@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface KKHistoryController : UICollectionViewController
+#import "KKDealListViewController.h"
+@interface KKHistoryController : KKDealListViewController
 
 @end
