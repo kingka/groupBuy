@@ -25,6 +25,7 @@
 #import "MBProgressHUD+KK.h"
 #import "KKDetailController.h"
 #import "KKMetaDataTool.h"
+#import "KKHistoryController.h"
 
 
 @interface KKDealsViewController()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -494,7 +495,11 @@
 
 -(void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx{
 
-    
+    if(idx == 2){
+        
+        KKHistoryController *vc = [[KKHistoryController alloc]init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
     [self awesomeMenuWillAnimateClose:menu];
 }
 

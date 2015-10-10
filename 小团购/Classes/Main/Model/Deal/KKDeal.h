@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @class KKRestriction;
 @interface KKDeal : NSObject
 /** 团购单ID */
@@ -61,4 +62,5 @@
 
 /** 限制条件 */
 @property (nonatomic, strong) KKRestriction *restrictions;
+
 @end

@@ -70,6 +70,8 @@
 		F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6D1BA9594300ECF92C /* NSObject+MJProperty.m */; };
 		F9B11B7A1BA9594300ECF92C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */; };
 		F9B11B8F1BA95AEB00ECF92C /* KKDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */; };
+		F9C759961BC8FCAB009334F6 /* KKHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C759951BC8FCAB009334F6 /* KKHistoryController.m */; };
+		F9C759991BC8FCCC009334F6 /* KKLocalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C759981BC8FCCC009334F6 /* KKLocalTool.m */; };
 		F9D09F871BC22A70006FDCDE /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F861BC22A70006FDCDE /* EmptyView.m */; };
 		F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */; };
 		F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F921BC27A0F006FDCDE /* KKDetailController.m */; };
@@ -210,6 +212,10 @@
 		F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		F9B11B8D1BA95AEB00ECF92C /* KKDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealTool.h; sourceTree = "<group>"; };
 		F9B11B8E1BA95AEB00ECF92C /* KKDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealTool.m; sourceTree = "<group>"; };
+		F9C759941BC8FCAB009334F6 /* KKHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKHistoryController.h; sourceTree = "<group>"; };
+		F9C759951BC8FCAB009334F6 /* KKHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKHistoryController.m; sourceTree = "<group>"; };
+		F9C759971BC8FCCC009334F6 /* KKLocalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocalTool.h; sourceTree = "<group>"; };
+		F9C759981BC8FCCC009334F6 /* KKLocalTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocalTool.m; sourceTree = "<group>"; };
 		F9D09F851BC22A70006FDCDE /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		F9D09F861BC22A70006FDCDE /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		F9D09F8B1BC240EA006FDCDE /* MBProgressHUD+KK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KK.h"; sourceTree = "<group>"; };
@@ -459,6 +465,7 @@
 		F9B11B451BA90C1000ECF92C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F9C759911BC8FC82009334F6 /* UserInfo */,
 				F9D09F8E1BC279D0006FDCDE /* Detail */,
 				F98FBAE11BABA590001D501B /* Deals */,
 				F9B11B461BA90C1000ECF92C /* Main */,
@@ -582,6 +589,33 @@
 				F9B11B6F1BA9594300ECF92C /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		F9C759911BC8FC82009334F6 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F9C759921BC8FC82009334F6 /* Controller */,
+				F9C759931BC8FC82009334F6 /* Tool */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		F9C759921BC8FC82009334F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9C759941BC8FCAB009334F6 /* KKHistoryController.h */,
+				F9C759951BC8FCAB009334F6 /* KKHistoryController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9C759931BC8FC82009334F6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F9C759971BC8FCCC009334F6 /* KKLocalTool.h */,
+				F9C759981BC8FCCC009334F6 /* KKLocalTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		F9D09F8E1BC279D0006FDCDE /* Detail */ = {
@@ -796,9 +830,11 @@
 				F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */,
 				F90976C91BBEBFF10018B92E /* KKDealCell.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
+				F9C759991BC8FCCC009334F6 /* KKLocalTool.m in Sources */,
 				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
+				F9C759961BC8FCAB009334F6 /* KKHistoryController.m in Sources */,
 				F93D7C741BB96E93001663E0 /* UIButton+Extension.m in Sources */,
 				F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */,
 				F9B11B781BA9594300ECF92C /* NSObject+MJKeyValue.m in Sources */,

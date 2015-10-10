@@ -18,6 +18,7 @@
 #import "KKGetSingleDealParam.h"
 #import <UIImageView+WebCache.h>
 #import <UMSocial.h>
+#import "KKLocalTool.h"
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -55,6 +56,7 @@
 #pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[KKLocalTool sharedLocalTool] saveHistoryDeal:self.deal];
     [self setupBasicView];
     [self setupWebView];
     [self setupLeftContent];
