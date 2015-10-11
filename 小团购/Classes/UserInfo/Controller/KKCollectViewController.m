@@ -1,28 +1,23 @@
 //
-//  KKHistoryController.m
+//  KKCollectViewController.m
 //  小团购
 //
-//  Created by Imanol on 15/10/10.
-//  Copyright (c) 2015年 Imanol. All rights reserved.
+//  Created by Imanol on 10/11/15.
+//  Copyright (c) 2015 Imanol. All rights reserved.
 //
 
-#import "KKHistoryController.h"
-#import "KKLocalTool.h"
+#import "KKCollectViewController.h"
 #import "UIBarButtonItem+Extension.h"
 
-@interface KKHistoryController ()
+@interface KKCollectViewController ()
 
 @end
 
-@implementation KKHistoryController
+@implementation KKCollectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupLeftBar];
-    
-    self.deals = [KKLocalTool sharedLocalTool].historyArray;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,9 +25,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSString *)empytIcon{
+    
+    return @"icon_collects_empty";
+}
+
 -(void)setupLeftBar{
     
-    self.title = @"浏览记录";
+    self.title = @"我的收藏";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"icon_back" highlightImageName:@"icon_back_highlighted" target:self action:@selector(back)];
 }
 
@@ -41,8 +41,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(NSString *)empytIcon{
-    
-    return @"icon_latestBrowse_empty";
-}
 @end

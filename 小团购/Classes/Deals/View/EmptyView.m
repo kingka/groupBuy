@@ -20,14 +20,13 @@
 */
 -(void)didMoveToSuperview{
 
+    if(self.superview)
     [self autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
     
     if(self = [super initWithFrame:frame]){
-        
-        self.image = [UIImage imageNamed:@"icon_deals_empty"];
         self.contentMode = UIViewContentModeCenter;
     }
     

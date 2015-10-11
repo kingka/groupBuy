@@ -12,4 +12,5 @@
 @interface KKDealListViewController : UICollectionViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(strong, nonatomic)NSMutableArray *deals;
 @property(weak, nonatomic)EmptyView *emptyView;
+-(NSString*)empytIcon;
 @end

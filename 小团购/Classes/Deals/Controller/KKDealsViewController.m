@@ -23,6 +23,8 @@
 #import "MBProgressHUD+KK.h"
 #import "KKMetaDataTool.h"
 #import "KKHistoryController.h"
+#import "KKNavigationController.h"
+#import "KKCollectViewController.h"
 
 @interface KKDealsViewController()
 @property(strong, nonatomic)KKSort *selectedSort;
@@ -421,10 +423,16 @@
 
 -(void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx{
 
-    if(idx == 2){
+    if(idx == 1){
+        
+        KKCollectViewController *vc = [[KKCollectViewController alloc]init];
+        KKNavigationController *nav = [[KKNavigationController alloc]initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+    }else if ( idx == 2){
         
         KKHistoryController *vc = [[KKHistoryController alloc]init];
-        [self presentViewController:vc animated:YES completion:nil];
+        KKNavigationController *nav = [[KKNavigationController alloc]initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
     }
     [self awesomeMenuWillAnimateClose:menu];
 }
@@ -456,5 +464,9 @@
 
 }
 
+-(NSString *)empytIcon{
+    
+    return @"icon_deals_empty";
+}
 
 @end

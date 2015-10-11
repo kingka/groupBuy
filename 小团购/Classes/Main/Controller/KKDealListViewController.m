@@ -56,7 +56,7 @@ static NSString * const reuseIdentifier = @"deal";
     
     if (_emptyView == nil) {
         EmptyView *emptyView = [EmptyView emptyView];
-        //emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
+        emptyView.image = [UIImage imageNamed:[self empytIcon]];
         [self.view insertSubview:emptyView belowSubview:self.collectionView];
         self.emptyView = emptyView;
     }

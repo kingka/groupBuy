@@ -37,6 +37,7 @@
 		F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFF81BABADDF00A2BF5B /* AwesomeMenuItem.m */; };
 		F95EDFFF1BABB0FE00A2BF5B /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */; };
 		F95EE0001BABB0FE00A2BF5B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */; };
+		F963970D1BCA5D2C00F3B70D /* KKCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F963970C1BCA5D2C00F3B70D /* KKCollectViewController.m */; };
 		F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98721A01BBBB732005BFE34 /* KKCitiesController.m */; };
 		F98721A31BBBB732005BFE34 /* KKCitiesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98721A11BBBB732005BFE34 /* KKCitiesController.xib */; };
 		F989CDE11BBA7786006589F7 /* KKDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F989CDE01BBA7786006589F7 /* KKDropDownMenu.m */; };
@@ -147,6 +148,8 @@
 		F95EDFFC1BABB0FE00A2BF5B /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		F95EDFFD1BABB0FE00A2BF5B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		F95EDFFE1BABB0FE00A2BF5B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		F963970B1BCA5D2C00F3B70D /* KKCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCollectViewController.h; sourceTree = "<group>"; };
+		F963970C1BCA5D2C00F3B70D /* KKCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectViewController.m; sourceTree = "<group>"; };
 		F987219F1BBBB732005BFE34 /* KKCitiesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCitiesController.h; sourceTree = "<group>"; };
 		F98721A01BBBB732005BFE34 /* KKCitiesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCitiesController.m; sourceTree = "<group>"; };
 		F98721A11BBBB732005BFE34 /* KKCitiesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKCitiesController.xib; sourceTree = "<group>"; };
@@ -607,6 +610,8 @@
 			children = (
 				F9C759941BC8FCAB009334F6 /* KKHistoryController.h */,
 				F9C759951BC8FCAB009334F6 /* KKHistoryController.m */,
+				F963970B1BCA5D2C00F3B70D /* KKCollectViewController.h */,
+				F963970C1BCA5D2C00F3B70D /* KKCollectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -846,6 +851,7 @@
 				F9C759991BC8FCCC009334F6 /* KKLocalTool.m in Sources */,
 				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
+				F963970D1BCA5D2C00F3B70D /* KKCollectViewController.m in Sources */,
 				F9B11AE21BA909BB00ECF92C /* AppDelegate.m in Sources */,
 				F9C759961BC8FCAB009334F6 /* KKHistoryController.m in Sources */,
 				F93D7C741BB96E93001663E0 /* UIButton+Extension.m in Sources */,
