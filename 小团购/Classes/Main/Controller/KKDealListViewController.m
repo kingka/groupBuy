@@ -13,7 +13,8 @@
 #import "UIView+Extension.h"
 #import "UIButton+Extension.h"
 
-@interface KKDealListViewController ()
+
+@interface KKDealListViewController ()<KKDealCellDelegate>
 
 @end
 
@@ -124,8 +125,10 @@ static NSString * const reuseIdentifier = @"deal";
     
     KKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.deal = self.deals[indexPath.row];
+    cell.delegate = self;
     return cell;
     
 }
+
 
 @end

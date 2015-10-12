@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 @class KKDeal;
+@class KKDealCell;
+@protocol KKDealCellDelegate <NSObject>
+
+@optional
+-(void)dealCellDidClickCover:(KKDealCell*)cell;
+
+@end
 
 @interface KKDealCell : UICollectionViewCell
 @property (strong, nonatomic) KKDeal *deal;
@@ -17,11 +24,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *cover;
 @property (weak, nonatomic) IBOutlet UIImageView *chooseImageView;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *currentPriceLYWidth;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *listPriceLYWidth;
+
+@property (weak, nonatomic) id<KKDealCellDelegate> delegate;
 @end

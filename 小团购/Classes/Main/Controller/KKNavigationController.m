@@ -7,6 +7,7 @@
 //
 
 #import "KKNavigationController.h"
+#import "KKDealsConst.h"
 
 @implementation KKNavigationController
 
@@ -14,6 +15,16 @@
     
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     [navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSForegroundColorAttributeName] = myColor(29, 177, 157);
+    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    
+    
+    NSMutableDictionary *disableAttrs = [NSMutableDictionary dictionary];
+    disableAttrs[NSForegroundColorAttributeName] = myColor(210, 210, 210);
+    [item setTitleTextAttributes:disableAttrs forState:UIControlStateDisabled];
 }
 
 -(void)viewDidLoad{

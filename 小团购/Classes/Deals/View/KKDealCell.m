@@ -43,7 +43,10 @@
     
     self.deal.choose = !self.deal.isChoose;
     self.chooseImageView.hidden = !self.deal.choose;
-    
+    if([self.delegate respondsToSelector:@selector(dealCellDidClickCover:)]){
+        
+        [self.delegate dealCellDidClickCover:self];
+    }
 }
 
 -(void)drawRect:(CGRect)rect{
