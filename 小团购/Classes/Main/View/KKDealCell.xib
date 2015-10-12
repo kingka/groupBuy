@@ -88,20 +88,45 @@
                             <constraint firstAttribute="trailing" secondItem="se5-sH-sOR" secondAttribute="trailing" id="wi6-u2-zlx"/>
                         </constraints>
                     </view>
+                    <button hidden="YES" opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgV-AQ-ZOS" userLabel="Cover">
+                        <rect key="frame" x="0.0" y="0.0" width="305" height="305"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="coverClick:" destination="dX0-Pg-YLm" eventType="touchUpInside" id="z7X-nS-m98"/>
+                        </connections>
+                    </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choosed_large" translatesAutoresizingMaskIntoConstraints="NO" id="BiZ-Af-KJG">
+                        <rect key="frame" x="269" y="275" width="36" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="3Ln-78-lbF"/>
+                            <constraint firstAttribute="width" constant="36" id="GjR-Ma-7tU"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="NgV-AQ-ZOS" secondAttribute="trailing" id="G0c-Cq-6ai"/>
                 <constraint firstAttribute="bottomMargin" secondItem="WxT-GL-zQh" secondAttribute="bottom" constant="10" id="GI6-pt-lph"/>
+                <constraint firstAttribute="bottom" secondItem="NgV-AQ-ZOS" secondAttribute="bottom" id="MNY-1m-JNR"/>
+                <constraint firstAttribute="bottom" secondItem="BiZ-Af-KJG" secondAttribute="bottom" id="Q9O-Rm-qJw"/>
                 <constraint firstItem="WxT-GL-zQh" firstAttribute="top" secondItem="eG5-MY-Ay7" secondAttribute="bottom" constant="10" id="SWp-JU-Am5"/>
                 <constraint firstAttribute="trailingMargin" secondItem="WxT-GL-zQh" secondAttribute="trailing" constant="10" id="Td3-Nu-68w"/>
                 <constraint firstItem="WxT-GL-zQh" firstAttribute="leading" secondItem="dX0-Pg-YLm" secondAttribute="leadingMargin" constant="10" id="hfq-e2-IXv"/>
                 <constraint firstAttribute="trailingMargin" secondItem="eG5-MY-Ay7" secondAttribute="trailing" constant="5" id="izv-mK-zHJ"/>
+                <constraint firstItem="NgV-AQ-ZOS" firstAttribute="top" secondItem="dX0-Pg-YLm" secondAttribute="top" id="oMd-95-OWh"/>
+                <constraint firstItem="NgV-AQ-ZOS" firstAttribute="leading" secondItem="dX0-Pg-YLm" secondAttribute="leading" id="pEu-bv-Eas"/>
+                <constraint firstAttribute="trailing" secondItem="BiZ-Af-KJG" secondAttribute="trailing" id="pYO-xa-fDV"/>
                 <constraint firstItem="eG5-MY-Ay7" firstAttribute="top" secondItem="dX0-Pg-YLm" secondAttribute="topMargin" constant="5" id="x21-14-wUV"/>
                 <constraint firstItem="eG5-MY-Ay7" firstAttribute="leading" secondItem="dX0-Pg-YLm" secondAttribute="leadingMargin" constant="5" id="ykc-nK-z2x"/>
             </constraints>
             <size key="customSize" width="305" height="305"/>
             <connections>
+                <outlet property="chooseImageView" destination="BiZ-Af-KJG" id="6uh-mR-UUX"/>
+                <outlet property="cover" destination="NgV-AQ-ZOS" id="39j-kc-U32"/>
                 <outlet property="currentPriceLYWidth" destination="lUm-0f-yo6" id="jDn-gb-zh5"/>
                 <outlet property="currentPriceLabel" destination="4iW-ci-nav" id="U5C-wV-SDq"/>
                 <outlet property="descLabel" destination="se5-sH-sOR" id="N7h-GT-Gdu"/>
@@ -113,4 +138,7 @@
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_choosed_large" width="72" height="60"/>
+    </resources>
 </document>

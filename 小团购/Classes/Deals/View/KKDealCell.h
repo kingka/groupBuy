@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *cover;
+@property (weak, nonatomic) IBOutlet UIImageView *chooseImageView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *currentPriceLYWidth;
 

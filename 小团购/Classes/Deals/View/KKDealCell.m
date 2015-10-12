@@ -28,6 +28,22 @@
     
     self.listPriceLYWidth.constant = [_listPriceLabel.text sizeWithAttributes:@{NSFontAttributeName:_listPriceLabel.font}].width + 1;// 1 是为了误差
     
+    if(deal.isEditing){
+        
+        self.cover.hidden = NO;
+    }else{
+        self.cover.hidden = YES;
+    }
+    
+    
+    self.chooseImageView.hidden = !self.deal.isChoose;
+    
+}
+- (IBAction)coverClick:(id)sender {
+    
+    self.deal.choose = !self.deal.isChoose;
+    self.chooseImageView.hidden = !self.deal.choose;
+    
 }
 
 -(void)drawRect:(CGRect)rect{

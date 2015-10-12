@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Imanol. All rights reserved.
 //
 
-#import "KKDealListViewController.h"
+#import "KKLocalDealListViewController.h"
 
-@interface KKCollectViewController : KKDealListViewController
+@interface KKCollectViewController : KKLocalDealListViewController
 
 @end

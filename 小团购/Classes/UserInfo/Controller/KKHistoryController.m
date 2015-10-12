@@ -8,7 +8,7 @@
 
 #import "KKHistoryController.h"
 #import "KKLocalTool.h"
-#import "UIBarButtonItem+Extension.h"
+
 
 @interface KKHistoryController ()
 
@@ -18,11 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setupLeftBar];
-    
-    
-
+    self.title = @"浏览记录";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -39,16 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setupLeftBar{
-    
-    self.title = @"浏览记录";
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"icon_back" highlightImageName:@"icon_back_highlighted" target:self action:@selector(back)];
-}
-
--(void)back{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 -(NSString *)empytIcon{
     

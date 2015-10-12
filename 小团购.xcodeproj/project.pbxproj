@@ -74,6 +74,7 @@
 		F9C759991BC8FCCC009334F6 /* KKLocalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C759981BC8FCCC009334F6 /* KKLocalTool.m */; };
 		F9C7599C1BC90983009334F6 /* KKDealListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C7599B1BC90983009334F6 /* KKDealListViewController.m */; };
 		F9C7599F1BC909E8009334F6 /* KKDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C7599E1BC909E8009334F6 /* KKDealCell.xib */; };
+		F9C759A21BCB864A009334F6 /* KKLocalDealListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C759A11BCB864A009334F6 /* KKLocalDealListViewController.m */; };
 		F9D09F871BC22A70006FDCDE /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F861BC22A70006FDCDE /* EmptyView.m */; };
 		F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F8C1BC240EA006FDCDE /* MBProgressHUD+KK.m */; };
 		F9D09F941BC27A0F006FDCDE /* KKDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D09F921BC27A0F006FDCDE /* KKDetailController.m */; };
@@ -221,6 +222,8 @@
 		F9C7599A1BC90983009334F6 /* KKDealListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDealListViewController.h; sourceTree = "<group>"; };
 		F9C7599B1BC90983009334F6 /* KKDealListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDealListViewController.m; sourceTree = "<group>"; };
 		F9C7599E1BC909E8009334F6 /* KKDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKDealCell.xib; sourceTree = "<group>"; };
+		F9C759A01BCB864A009334F6 /* KKLocalDealListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocalDealListViewController.h; sourceTree = "<group>"; };
+		F9C759A11BCB864A009334F6 /* KKLocalDealListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocalDealListViewController.m; sourceTree = "<group>"; };
 		F9D09F851BC22A70006FDCDE /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		F9D09F861BC22A70006FDCDE /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		F9D09F8B1BC240EA006FDCDE /* MBProgressHUD+KK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KK.h"; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 				F9C759951BC8FCAB009334F6 /* KKHistoryController.m */,
 				F963970B1BCA5D2C00F3B70D /* KKCollectViewController.h */,
 				F963970C1BCA5D2C00F3B70D /* KKCollectViewController.m */,
+				F9C759A01BCB864A009334F6 /* KKLocalDealListViewController.h */,
+				F9C759A11BCB864A009334F6 /* KKLocalDealListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -840,6 +845,7 @@
 				F989CDEB1BBABF02006589F7 /* KKDropDownSubCell.m in Sources */,
 				F92FE9271BB133EB00F28E60 /* KKCategory.m in Sources */,
 				F9B11B701BA9594300ECF92C /* MJDictionaryCache.m in Sources */,
+				F9C759A21BCB864A009334F6 /* KKLocalDealListViewController.m in Sources */,
 				F9AC97411BB7D4AF0061BC08 /* UIBarButtonItem+Extension.m in Sources */,
 				F9D09F8D1BC240EA006FDCDE /* MBProgressHUD+KK.m in Sources */,
 				F9EE58321BC157FC001B9729 /* LableLine.m in Sources */,

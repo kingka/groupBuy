@@ -7,7 +7,6 @@
 //
 
 #import "KKCollectViewController.h"
-#import "UIBarButtonItem+Extension.h"
 #import "KKLocalTool.h"
 
 @interface KKCollectViewController ()
@@ -18,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupLeftBar];
+    self.title = @"我的收藏";
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -35,15 +35,8 @@
     return @"icon_collects_empty";
 }
 
--(void)setupLeftBar{
-    
-    self.title = @"我的收藏";
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"icon_back" highlightImageName:@"icon_back_highlighted" target:self action:@selector(back)];
-}
 
--(void)back{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
+
 
 @end

@@ -63,4 +63,7 @@
 /** 限制条件 */
 @property (nonatomic, strong) KKRestriction *restrictions;
 
+@property (assign, nonatomic, getter=isEditing) BOOL editing;
+@property (assign, nonatomic, getter=isChoose) BOOL choose;
+
 @end
