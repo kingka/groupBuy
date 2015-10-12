@@ -31,7 +31,14 @@ static NSString * const reuseIdentifier = @"deal";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
     [self setupBasicView];
+    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +57,7 @@ static NSString * const reuseIdentifier = @"deal";
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
+    
 }
 -(EmptyView *)emptyView{
     

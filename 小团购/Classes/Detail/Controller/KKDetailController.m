@@ -19,6 +19,7 @@
 #import <UIImageView+WebCache.h>
 #import <UMSocial.h>
 #import "KKLocalTool.h"
+#import "MBProgressHUD+KK.h"
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -188,6 +189,7 @@
 -(void)setupBasicView{
     
     self.view.backgroundColor = myColor(230, 230, 230);
+    self.collect.selected = [[KKLocalTool sharedLocalTool].collectArray containsObject:self.deal];
     //self.webView.scrollView.hidden = YES;
 }
 
@@ -199,6 +201,18 @@
 - (IBAction)buy:(id)sender {
 }
 - (IBAction)collect:(id)sender {
+    
+    if(self.collect.isSelected){
+        
+        [[KKLocalTool sharedLocalTool] unSaveCollectDeal:self.deal];
+        [MBProgressHUD showSuccess:@"取消收藏"];
+    }else{
+        
+        [[KKLocalTool sharedLocalTool] saveCollectDeal:self.deal];
+        [MBProgressHUD showSuccess:@"收藏成功"];
+    }
+    
+    self.collect.selected = !self.collect.isSelected;
 }
 
 - (IBAction)share:(id)sender {
