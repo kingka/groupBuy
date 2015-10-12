@@ -21,8 +21,17 @@
     
     [self setupLeftBar];
     
-    self.deals = [KKLocalTool sharedLocalTool].historyArray;
+    
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    self.deals = [KKLocalTool sharedLocalTool].historyArray;
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

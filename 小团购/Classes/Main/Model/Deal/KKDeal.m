@@ -20,4 +20,9 @@ MJCodingImplementation
 +(NSDictionary *)replacedKeyFromPropertyName{
     return @{@"desc" : @"description"};
 }
+
+-(BOOL)isEqual:(KKDeal *)other{
+
+    return [self.deal_id isEqualToString:other.deal_id];
+}
 @end

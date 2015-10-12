@@ -32,7 +32,7 @@ KKSingletonM(LocalTool)
 -(void)saveHistoryDeal:(KKDeal *)deal{
     
     [self.historyArray removeObject:deal];
-    [self.historyArray addObject:deal];
+    [self.historyArray insertObject:deal atIndex:0];
     [NSKeyedArchiver archiveRootObject:self.historyArray toFile:KKHistoryDealsFile];
 }
 @end
