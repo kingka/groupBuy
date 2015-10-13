@@ -28,6 +28,7 @@
 		F92FE93C1BB1343500F28E60 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F92FE9381BB1343500F28E60 /* sorts.plist */; };
 		F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */; };
 		F92FE9411BB154BD00F28E60 /* KKMetaDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */; };
+		F935A4FD1BCCE03F00A914CD /* KKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */; };
 		F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */; };
 		F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */; };
 		F93D7C6F1BB95CBF001663E0 /* KKRegionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */; };
@@ -132,6 +133,8 @@
 		F92FE93D1BB14EA700F28E60 /* KKMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMetaDataTool.h; sourceTree = "<group>"; };
 		F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTool.m; sourceTree = "<group>"; };
 		F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTest.m; sourceTree = "<group>"; };
+		F935A4FB1BCCE03F00A914CD /* KKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSearchViewController.h; sourceTree = "<group>"; };
+		F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSearchViewController.m; sourceTree = "<group>"; };
 		F93D7C671BB95CA4001663E0 /* KKCategoriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKCategoriesVC.h; path = ../View/KKCategoriesVC.h; sourceTree = "<group>"; };
 		F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKCategoriesVC.m; path = ../View/KKCategoriesVC.m; sourceTree = "<group>"; };
 		F93D7C6A1BB95CB2001663E0 /* KKSortVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSortVC.h; path = ../View/KKSortVC.h; sourceTree = "<group>"; };
@@ -336,6 +339,38 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		F935A4F71BCCE01800A914CD /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F935A4F81BCCE01800A914CD /* Controller */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		F935A4F81BCCE01800A914CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F935A4F91BCCE01800A914CD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F935A4FA1BCCE01800A914CD /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F935A4FA1BCCE01800A914CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F935A4FB1BCCE03F00A914CD /* KKSearchViewController.h */,
+				F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F95EDFF41BABADDF00A2BF5B /* AwesomeMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +507,8 @@
 		F9B11B451BA90C1000ECF92C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F935A4F71BCCE01800A914CD /* Map */,
+				F935A4F91BCCE01800A914CD /* Search */,
 				F9C759911BC8FC82009334F6 /* UserInfo */,
 				F9D09F8E1BC279D0006FDCDE /* Detail */,
 				F98FBAE11BABA590001D501B /* Deals */,
@@ -812,6 +849,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F989CDE81BBABEEE006589F7 /* KKDropDownMainCell.m in Sources */,
+				F935A4FD1BCCE03F00A914CD /* KKSearchViewController.m in Sources */,
 				F92FE9331BB1341E00F28E60 /* KKCityGroup.m in Sources */,
 				F92FE9191BB1336C00F28E60 /* KKBusiness.m in Sources */,
 				F95EDFF91BABADDF00A2BF5B /* AwesomeMenu.m in Sources */,

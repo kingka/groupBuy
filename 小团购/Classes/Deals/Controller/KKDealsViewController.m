@@ -25,6 +25,7 @@
 #import "KKHistoryController.h"
 #import "KKNavigationController.h"
 #import "KKCollectViewController.h"
+#import "KKSearchViewController.h"
 
 @interface KKDealsViewController()
 @property(strong, nonatomic)KKSort *selectedSort;
@@ -197,6 +198,9 @@
 
 -(void)searchBtnClick{
     
+    KKSearchViewController *vc = [[KKSearchViewController alloc]init];
+    KKNavigationController *nav = [[KKNavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 -(void)categoryItemClick:(id)sender{
