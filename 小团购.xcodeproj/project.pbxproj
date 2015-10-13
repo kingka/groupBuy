@@ -29,6 +29,9 @@
 		F92FE93F1BB14EA700F28E60 /* KKMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE93E1BB14EA700F28E60 /* KKMetaDataTool.m */; };
 		F92FE9411BB154BD00F28E60 /* KKMetaDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */; };
 		F935A4FD1BCCE03F00A914CD /* KKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */; };
+		F935A5011BCD033A00A914CD /* KKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F935A4FF1BCD033A00A914CD /* KKMapViewController.m */; };
+		F935A5021BCD033A00A914CD /* KKMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F935A5001BCD033A00A914CD /* KKMapViewController.xib */; };
+		F935A5061BCD098D00A914CD /* KKAnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F935A5051BCD098D00A914CD /* KKAnotation.m */; };
 		F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */; };
 		F93D7C6C1BB95CB2001663E0 /* KKSortVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6B1BB95CB2001663E0 /* KKSortVC.m */; };
 		F93D7C6F1BB95CBF001663E0 /* KKRegionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D7C6E1BB95CBF001663E0 /* KKRegionVC.m */; };
@@ -135,6 +138,11 @@
 		F92FE9401BB154BD00F28E60 /* KKMetaDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMetaDataTest.m; sourceTree = "<group>"; };
 		F935A4FB1BCCE03F00A914CD /* KKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSearchViewController.h; sourceTree = "<group>"; };
 		F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSearchViewController.m; sourceTree = "<group>"; };
+		F935A4FE1BCD033A00A914CD /* KKMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMapViewController.h; sourceTree = "<group>"; };
+		F935A4FF1BCD033A00A914CD /* KKMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMapViewController.m; sourceTree = "<group>"; };
+		F935A5001BCD033A00A914CD /* KKMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKMapViewController.xib; sourceTree = "<group>"; };
+		F935A5041BCD098D00A914CD /* KKAnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAnotation.h; sourceTree = "<group>"; };
+		F935A5051BCD098D00A914CD /* KKAnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAnotation.m; sourceTree = "<group>"; };
 		F93D7C671BB95CA4001663E0 /* KKCategoriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKCategoriesVC.h; path = ../View/KKCategoriesVC.h; sourceTree = "<group>"; };
 		F93D7C681BB95CA4001663E0 /* KKCategoriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KKCategoriesVC.m; path = ../View/KKCategoriesVC.m; sourceTree = "<group>"; };
 		F93D7C6A1BB95CB2001663E0 /* KKSortVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKSortVC.h; path = ../View/KKSortVC.h; sourceTree = "<group>"; };
@@ -342,6 +350,7 @@
 		F935A4F71BCCE01800A914CD /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				F935A5031BCD096800A914CD /* Model */,
 				F935A4F81BCCE01800A914CD /* Controller */,
 			);
 			path = Map;
@@ -350,6 +359,9 @@
 		F935A4F81BCCE01800A914CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F935A4FE1BCD033A00A914CD /* KKMapViewController.h */,
+				F935A4FF1BCD033A00A914CD /* KKMapViewController.m */,
+				F935A5001BCD033A00A914CD /* KKMapViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -369,6 +381,15 @@
 				F935A4FC1BCCE03F00A914CD /* KKSearchViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F935A5031BCD096800A914CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F935A5041BCD098D00A914CD /* KKAnotation.h */,
+				F935A5051BCD098D00A914CD /* KKAnotation.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F95EDFF41BABADDF00A2BF5B /* AwesomeMenu */ = {
@@ -796,6 +817,7 @@
 				F989CDE51BBA817D006589F7 /* KKRegionVC.xib in Resources */,
 				F98721A31BBBB732005BFE34 /* KKCitiesController.xib in Resources */,
 				F9D09F951BC27A0F006FDCDE /* KKDetailController.xib in Resources */,
+				F935A5021BCD033A00A914CD /* KKMapViewController.xib in Resources */,
 				F92FE93B1BB1343500F28E60 /* cityGroups.plist in Resources */,
 				F9C7599F1BC909E8009334F6 /* KKDealCell.xib in Resources */,
 			);
@@ -892,6 +914,7 @@
 				F98721A21BBBB732005BFE34 /* KKCitiesController.m in Sources */,
 				F90976C91BBEBFF10018B92E /* KKDealCell.m in Sources */,
 				F9B11B501BA90C1000ECF92C /* DPAPI.m in Sources */,
+				F935A5061BCD098D00A914CD /* KKAnotation.m in Sources */,
 				F9C759991BC8FCCC009334F6 /* KKLocalTool.m in Sources */,
 				F93D7C691BB95CA4001663E0 /* KKCategoriesVC.m in Sources */,
 				F9B11B751BA9594300ECF92C /* MJPropertyType.m in Sources */,
@@ -907,6 +930,7 @@
 				F95EDFFA1BABADDF00A2BF5B /* AwesomeMenuItem.m in Sources */,
 				F9B11ADF1BA909BB00ECF92C /* main.m in Sources */,
 				F9B11B791BA9594300ECF92C /* NSObject+MJProperty.m in Sources */,
+				F935A5011BCD033A00A914CD /* KKMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
