@@ -183,6 +183,24 @@
     self.refundableAnyTimeButton.selected = self.deal.restrictions.is_refundable;
     self.refundableExpiresButton.selected = self.deal.restrictions.is_refundable;
     self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
+    //deadTime formatter
+    // 剩余时间处理
+    // 当前时间 2014-08-27 09:06
+    NSDate *now = [NSDate date];
+    // 过期时间 2014-08-28 00:00
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSDate *deadTime = [[fmt dateFromString:self.deal.purchase_deadline] dateByAddingTimeInterval:24 * 3600];
+    // 比较2个时间的差距
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+    NSDateComponents *cmps = [calendar components:unit fromDate:now toDate:deadTime options:0];
+    if (cmps.day > 365) {
+        self.leftTimeButton.title = @"一年内不过期";
+    } else {
+        self.leftTimeButton.title = [NSString stringWithFormat:@"%d天%d小时%d分", cmps.day, cmps.hour, cmps.minute];
+    }
+
 }
 
 
