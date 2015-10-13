@@ -140,6 +140,8 @@
 
 -(void)delete{
 
+    //fresh deleteBtn title
+    [self dealCellDidClickCover:nil];
 }
 
 -(void)unSelect{

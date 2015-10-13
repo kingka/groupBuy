@@ -8,6 +8,7 @@
 
 #import "KKCollectViewController.h"
 #import "KKLocalTool.h"
+#import "KKDeal.h"
 
 @interface KKCollectViewController ()
 
@@ -30,12 +31,28 @@
     [self.collectionView reloadData];
 }
 
+#pragma mark - overide parent method
 -(NSString *)empytIcon{
     
     return @"icon_collects_empty";
 }
 
-
+-(void)delete{
+    
+    NSMutableArray *selectedDeals = [NSMutableArray array];
+    for(KKDeal *deal in self.deals){
+        
+        if(deal.isChoose){
+            [selectedDeals addObject:deal];
+            deal.choose = NO;
+            deal.editing = NO;
+        }
+    }
+    [[KKLocalTool sharedLocalTool] unSaveCollectDeals:selectedDeals];
+    [self.deals removeObjectsInArray:selectedDeals];
+    [super delete];
+    [self.collectionView reloadData];
+}
 
 
 

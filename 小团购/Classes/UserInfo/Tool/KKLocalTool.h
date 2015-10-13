@@ -18,6 +18,9 @@ KKSingletonH(LocalTool)
 @property (strong, nonatomic,readonly) NSMutableArray *historyArray;
 @property (strong, nonatomic,readonly) NSMutableArray *collectArray;
 -(void)saveHistoryDeal:(KKDeal *)deal;
+-(void)unSaveHistoryDeal:(KKDeal *)deal;
+-(void)unSaveHistoryDeals:(NSArray *)deals;
 -(void)saveCollectDeal:(KKDeal *)deal;
 -(void)unSaveCollectDeal:(KKDeal *)deal;
+-(void)unSaveCollectDeals:(NSArray *)deals;
 @end

@@ -10,4 +10,5 @@
 
 @interface KKLocalDealListViewController : KKDealListViewController
 
+-(void)delete;
 @end

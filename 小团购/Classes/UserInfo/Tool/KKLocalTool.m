@@ -49,6 +49,17 @@ KKSingletonM(LocalTool)
     [self.historyArray insertObject:deal atIndex:0];
     [NSKeyedArchiver archiveRootObject:self.historyArray toFile:KKHistoryDealsFile];
 }
+-(void)unSaveHistoryDeal:(KKDeal *)deal{
+
+    [self.historyArray removeObject:deal];
+    [NSKeyedArchiver archiveRootObject:self.historyArray toFile:KKHistoryDealsFile];
+}
+
+-(void)unSaveHistoryDeals:(NSArray *)deals{
+
+    [self.historyArray removeObjectsInArray:deals];
+    [NSKeyedArchiver archiveRootObject:self.historyArray toFile:KKHistoryDealsFile];
+}
 
 -(void)saveCollectDeal:(KKDeal *)deal{
 
@@ -59,6 +70,11 @@ KKSingletonM(LocalTool)
 -(void)unSaveCollectDeal:(KKDeal *)deal{
     
     [self.collectArray removeObject:deal];
+    [NSKeyedArchiver archiveRootObject:self.collectArray toFile:KKCollectDealsFile];
+}
+-(void)unSaveCollectDeals:(NSArray *)deals{
+    
+    [self.collectArray removeObjectsInArray:deals];
     [NSKeyedArchiver archiveRootObject:self.collectArray toFile:KKCollectDealsFile];
 }
 @end
