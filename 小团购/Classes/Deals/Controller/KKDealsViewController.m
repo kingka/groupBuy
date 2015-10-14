@@ -26,6 +26,7 @@
 #import "KKNavigationController.h"
 #import "KKCollectViewController.h"
 #import "KKSearchViewController.h"
+#import "KKMapViewController.h"
 
 @interface KKDealsViewController()
 @property(strong, nonatomic)KKSort *selectedSort;
@@ -193,7 +194,10 @@
 }
 
 -(void)mapBtnClick{
-    
+    KKMapViewController *vc = [[KKMapViewController alloc]init];
+    KKNavigationController *nav = [[KKNavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+
 }
 
 -(void)searchBtnClick{

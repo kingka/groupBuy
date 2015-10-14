@@ -15,11 +15,13 @@
 #import "MBProgressHUD+KK.h"
 #import "KKBusiness.h"
 #import "KKAnotation.h"
+#import "MJExtension.h"
 
-@interface KKMapViewController ()<MKMapViewDelegate>
+@interface KKMapViewController ()<MKMapViewDelegate,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (copy, nonatomic) NSString *locationCity;
 @property (nonatomic, strong) CLGeocoder *geocoder;
+@property (strong, nonatomic) CLLocationManager *manager;
 
 @end
 
@@ -37,11 +39,32 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    [self setupMapView];
+    [self setupLeftBar];
 }
 
 -(void)setupMapView{
     
+    switch ([CLLocationManager authorizationStatus]) {
+        case kCLAuthorizationStatusNotDetermined:
+        {
+            NSLog(@"kCLAuthorizationStatusNotDetermined");
+            CLLocationManager *manager = [[CLLocationManager alloc]init];
+            manager.delegate = self;
+            [manager requestWhenInUseAuthorization];
+            self.manager = manager;
+        }
+            break;
+        case kCLAuthorizationStatusDenied:
+        {
+            NSLog(@"kCLAuthorizationStatusDenied");
+        }
+            
+        default:{
+        
+        }
+            break;
+    }
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
 }
 
@@ -98,6 +121,7 @@
     param.radius = @1500;
     //city
     param.city = self.locationCity;
+    NSLog(@"%@",param.keyValues);
     //call server
     [KKDealTool findDeals:param success:^(KKFindDealResult *result) {
         //set annotation
@@ -112,19 +136,29 @@
 -(void)setupDeals:(NSArray *)deals{
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
         for(KKDeal *deal in deals){
             
             for(KKBusiness *business in deal.businesses){
+                
                 KKAnotation *anotation = [[KKAnotation alloc]init];
                 anotation.coordinate = CLLocationCoordinate2DMake(business.latitude, business.longitude);
                 anotation.title = deal.title;
                 anotation.subtitle = business.name;
+                
                 if([self.mapView.annotations containsObject:anotation])continue;
+                
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [self.mapView addAnnotation:anotation];
                 });
             }
         }
     });
+}
+
+#pragma mark - CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    
+    NSLog(@"didChangeAuthorizationStatus");
 }
 @end
