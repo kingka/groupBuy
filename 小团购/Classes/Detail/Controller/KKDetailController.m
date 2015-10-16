@@ -20,6 +20,11 @@
 #import <UMSocial.h>
 #import "KKLocalTool.h"
 #import "MBProgressHUD+KK.h"
+// 支付宝头文件
+#import "AlixPayOrder.h"
+#import "PartnerConfig.h"
+#import "DataSigner.h"
+#import "AlixLibService.h"
 
 @interface KKDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -217,7 +222,35 @@
 }
 
 - (IBAction)buy:(id)sender {
+    // 1.生成订单信息
+    AlixPayOrder *order = [[AlixPayOrder alloc] init];
+    order.partner = PartnerID; // 商户ID
+    order.seller = SellerID; // 帐号ID
+    
+    order.tradeNO = @"2014082717183778587475"; // 订单ID（由商家自行制定）
+    order.productName = self.deal.title; // 商品标题
+    order.productDescription = self.deal.desc; // 商品描述
+    order.amount = [NSString stringWithFormat:@"%.2f", [self.deal.current_price floatValue]]; //商品价格
+    order.notifyURL =  @"http%3A%2F%2Fwwww.xxx.com"; // 回调URL
+    
+    // 2.签名加密
+//    id<DataSigner> signer = CreateRSADataSigner(PartnerPrivKey);
+//    NSString *signedString = [signer signString:[order description]];
+//
+//    // 3.利用订单信息、签名信息、签名类型生成一个订单字符串
+//    NSString *orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
+//                             [order description], signedString, @"RSA"];
+//    
+//    // 4.打开支付宝,传递订单信息
+//    [AlixLibService payOrder:orderString AndScheme:@"kk" seletor:@selector(paymentResultDelegate:) target:self];
+
 }
+
+-(void)paymentResultDelegate:(NSString *)result
+{
+    NSLog(@"%@",result);
+}
+
 - (IBAction)collect:(id)sender {
     
     if(self.collect.isSelected){
